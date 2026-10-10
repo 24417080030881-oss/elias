@@ -1,0 +1,749 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 60</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+            background-color: #101010;
+        }
+
+        #header {
+            background: #171717;
+        }
+
+        #logo {
+            color: #f0c66b !important;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #content {
+            background: #151515;
+            color: #eeeeee;
+            padding: 35px 0;
+        }
+
+        #content h2,
+        #content h3,
+        #content h4 {
+            color: #f0c66b;
+        }
+
+        #content p,
+        #content li {
+            color: #dddddd;
+            line-height: 1.7;
+        }
+
+        /* PRESENTACIÓN */
+        .presentacion {
+            text-align: center;
+            padding: 30px 15px;
+            margin-bottom: 30px;
+            background: linear-gradient(
+                135deg,
+                #292018,
+                #111111,
+                #302319
+            );
+            border: 1px solid #72572f;
+            border-radius: 8px;
+        }
+
+        .presentacion h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .presentacion p {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            color: #f0c66b;
+            border: 1px solid #f0c66b;
+            padding: 6px 13px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-size: 0.8em;
+        }
+
+        /* CUADRÍCULA DE PELÍCULAS */
+        .peliculas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            margin: 25px 0 50px;
+        }
+
+        .pelicula {
+            background: #222222;
+            border: 1px solid #45403a;
+            border-radius: 7px;
+            overflow: hidden;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        .poster {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: #302a24;
+        }
+
+        .poster img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s;
+        }
+
+        .pelicula:hover .poster img {
+            transform: scale(1.04);
+        }
+
+        .pelicula-info {
+            padding: 15px;
+        }
+
+        .pelicula-info h3 {
+            font-size: 1.05em;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .genero {
+            display: inline-block;
+            color: #ffffff;
+            background: #493a26;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            margin: 5px 0 10px;
+        }
+
+        .pelicula-info p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* SECCIONES */
+        .seccion-titulo {
+            border-bottom: 2px solid #8b6a35;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .introduccion {
+            margin-bottom: 35px;
+        }
+
+        /* LISTA DE ÓSCAR */
+        .oscar-lista {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .oscar-lista li {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #222222;
+            border-left: 4px solid #c9a04f;
+            border-radius: 4px;
+        }
+
+        .oscar-anio {
+            min-width: 75px;
+            color: #f0c66b;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        .oscar-lista strong {
+            color: #ffffff;
+        }
+
+        .nota {
+            font-size: 0.9em;
+            color: #bbbbbb;
+            font-style: italic;
+        }
+
+        /* BLOQUES INFERIORES */
+        .bloque-extra {
+            background: #222222;
+            border: 1px solid #45403a;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+        }
+
+        .bloque-extra ul {
+            padding-left: 20px;
+        }
+
+        /* PIE DE PÁGINA */
+        #footer {
+            background: #101010;
+            color: #cccccc;
+            padding: 25px 0;
+        }
+
+        #footer p {
+            text-align: center;
+        }
+
+        #copyright {
+            background: #080808;
+            color: #aaaaaa;
+        }
+
+        /* TABLET */
+        @media screen and (max-width: 1000px) {
+            .peliculas-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 18px;
+            }
+        }
+
+        /* CELULAR */
+        @media screen and (max-width: 600px) {
+            .peliculas-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .pelicula-info {
+                padding: 10px;
+            }
+
+            .pelicula-info h3 {
+                font-size: 0.95em;
+            }
+
+            .presentacion h2 {
+                font-size: 1.6em;
+            }
+
+            .oscar-lista li {
+                gap: 10px;
+                padding: 12px;
+            }
+
+            .oscar-anio {
+                min-width: 65px;
+            }
+        }
+    </style>
+</head>
+
+<body class="subpage">
+
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Cine Clásico
+                        </a>
+                    </h1>
+
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                       
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO -->
+    <section id="content">
+        <div class="container">
+
+            <!-- PRESENTACIÓN -->
+            <div class="presentacion">
+                <span class="etiqueta">UNA DÉCADA DE CAMBIOS</span>
+
+                <h2>Las Grandes Películas de los Años 60</h2>
+
+                <p>
+                    Los años 60 transformaron el cine con historias
+                    más atrevidas, nuevos estilos de dirección y
+                    personajes complejos. Hollywood produjo grandes
+                    películas épicas, mientras directores europeos
+                    y asiáticos renovaban el lenguaje cinematográfico.
+                </p>
+            </div>
+
+            <!-- INTRODUCCIÓN -->
+            <section class="introduccion">
+                <h2 class="seccion-titulo">
+                    10 películas imprescindibles
+                </h2>
+
+                <p>
+                    Descubre diez películas esenciales de los años 60.
+                    Cada tarjeta incluye un espacio para el póster,
+                    el año de estreno, el género y una descripción.
+                </p>
+            </section>
+
+            <!-- CUADRÍCULA DE PELÍCULAS -->
+            <div class="peliculas-grid">
+
+                <!-- 1 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula1">
+                        <img src="images/psycho.jpg"
+                             alt="Póster de Psycho"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula1">
+                        <span class="anio">1960</span>
+                        <h3>Psycho</h3>
+                        <span class="genero">Terror / Suspenso</span>
+                        <p>
+                            Alfred Hitchcock creó una de las películas
+                            de suspense más influyentes de la historia.
+                            Su atmósfera, montaje y giros narrativos
+                            cambiaron el cine de terror.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula2">
+                        <img src="images/la-dolce-vita.jpg"
+                             alt="Póster de La Dolce Vita"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula2">
+                        <span class="anio">1960</span>
+                        <h3>La Dolce Vita</h3>
+                        <span class="genero">Drama</span>
+                        <p>
+                            Federico Fellini retrata la vida nocturna
+                            de Roma y la búsqueda de sentido de un
+                            periodista rodeado de fama, lujo y excesos.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula3">
+                        <img src="images/lawrence-of-arabia.jpg"
+                             alt="Póster de Lawrence of Arabia"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula3">
+                        <span class="anio">1962</span>
+                        <h3>Lawrence of Arabia</h3>
+                        <span class="genero">Épica / Aventura</span>
+                        <p>
+                            La historia de T. E. Lawrence durante
+                            la Primera Guerra Mundial destaca por
+                            sus paisajes, su fotografía y su enorme
+                            escala cinematográfica.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula4">
+                        <img src="images/to-kill-a-mockingbird.jpg"
+                             alt="Póster de To Kill a Mockingbird"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula4">
+                        <span class="anio">1962</span>
+                        <h3>To Kill a Mockingbird</h3>
+                        <span class="genero">Drama judicial</span>
+                        <p>
+                            Un abogado defiende a un hombre negro
+                            acusado injustamente en el sur de Estados
+                            Unidos. La película aborda el racismo,
+                            la justicia y la empatía.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula5">
+                        <img src="images/8-half.jpg"
+                             alt="Póster de 8½"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula5">
+                        <span class="anio">1963</span>
+                        <h3>8½</h3>
+                        <span class="genero">Drama / Cine de autor</span>
+                        <p>
+                            Fellini presenta a un director de cine
+                            que atraviesa una crisis creativa.
+                            Sueños, recuerdos y fantasía se mezclan
+                            en una obra clave del cine moderno.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 6 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula6">
+                        <img src="images/dr-strangelove.jpg"
+                             alt="Póster de Dr. Strangelove"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula6">
+                        <span class="anio">1964</span>
+                        <h3>Dr. Strangelove</h3>
+                        <span class="genero">Comedia / Sátira</span>
+                        <p>
+                            Stanley Kubrick utiliza el humor negro
+                            para satirizar la Guerra Fría y el peligro
+                            de una guerra nuclear provocada por errores
+                            y decisiones absurdas.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 7 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula7">
+                        <img src="images/the-sound-of-music.jpg"
+                             alt="Póster de The Sound of Music"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula7">
+                        <span class="anio">1965</span>
+                        <h3>The Sound of Music</h3>
+                        <span class="genero">Musical / Drama</span>
+                        <p>
+                            Una joven institutriz transforma la vida
+                            de una familia a través de la música.
+                            Sus canciones y paisajes la convirtieron
+                            en uno de los musicales más famosos.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 8 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula8">
+                        <img src="images/the-good-the-bad-and-the-ugly.jpg"
+                             alt="Póster de The Good, the Bad and the Ugly"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula8">
+                        <span class="anio">1966</span>
+                        <h3>The Good, the Bad and the Ugly</h3>
+                        <span class="genero">Western</span>
+                        <p>
+                            Tres pistoleros compiten por encontrar
+                            un tesoro durante la Guerra Civil
+                            estadounidense. Sergio Leone redefinió
+                            el western con su estilo visual y su música.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 9 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula9">
+                        <img src="images/2001-a-space-odyssey.jpg"
+                             alt="Póster de 2001: A Space Odyssey"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula9">
+                        <span class="anio">1968</span>
+                        <h3>2001: A Space Odyssey</h3>
+                        <span class="genero">Ciencia ficción</span>
+                        <p>
+                            Stanley Kubrick explora la evolución humana,
+                            la inteligencia artificial y el universo.
+                            Sus efectos visuales y su enfoque filosófico
+                            marcaron la ciencia ficción.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 10 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula10">
+                        <img src="images/once-upon-a-time-in-the-west.jpg"
+                             alt="Póster de Once Upon a Time in the West"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula10">
+                        <span class="anio">1968</span>
+                        <h3>Once Upon a Time in the West</h3>
+                        <span class="genero">Western / Drama</span>
+                        <p>
+                            Sergio Leone construye una historia de
+                            venganza y poder en el Viejo Oeste,
+                            reconocida por sus personajes, sus planos
+                            y su inolvidable banda sonora.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- ÓSCAR A MEJOR PELÍCULA -->
+            <section>
+                <h2 class="seccion-titulo">
+                    Ganadoras del Óscar a Mejor Película
+                </h2>
+
+                <p>
+                    Esta lista muestra las películas ganadoras estrenadas
+                    entre 1960 y 1969. El Óscar se entregaba normalmente
+                    al año siguiente del estreno.
+                </p>
+
+                <ul class="oscar-lista">
+
+                    <li>
+                        <span class="oscar-anio">1960</span>
+                        <div>
+                            <strong>The Apartment</strong>
+                            <p>
+                                Comedia dramática de Billy Wilder sobre
+                                un empleado que presta su apartamento
+                                a sus superiores y termina envuelto
+                                en problemas personales.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1961</span>
+                        <div>
+                            <strong>West Side Story</strong>
+                            <p>
+                                Musical inspirado en Romeo y Julieta,
+                                ambientado en el conflicto entre dos
+                                pandillas de Nueva York.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1962</span>
+                        <div>
+                            <strong>Lawrence of Arabia</strong>
+                            <p>
+                                Épica histórica sobre T. E. Lawrence
+                                y su participación en la revuelta árabe
+                                durante la Primera Guerra Mundial.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1963</span>
+                        <div>
+                            <strong>Tom Jones</strong>
+                            <p>
+                                Comedia de época basada en la novela
+                                de Henry Fielding, con aventuras
+                                y enredos románticos.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1964</span>
+                        <div>
+                            <strong>My Fair Lady</strong>
+                            <p>
+                                Musical sobre una joven florista que
+                                recibe clases de pronunciación y etiqueta
+                                para entrar en la alta sociedad.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1965</span>
+                        <div>
+                            <strong>The Sound of Music</strong>
+                            <p>
+                                Musical sobre Maria, una institutriz
+                                que cambia la vida de la familia
+                                von Trapp en Austria.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1966</span>
+                        <div>
+                            <strong>A Man for All Seasons</strong>
+                            <p>
+                                Drama histórico sobre Thomas More,
+                                quien se enfrenta al rey Enrique VIII
+                                por sus convicciones.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1967</span>
+                        <div>
+                            <strong>In the Heat of the Night</strong>
+                            <p>
+                                Un detective negro ayuda a investigar
+                                un asesinato en una localidad sureña,
+                                enfrentándose al racismo.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1968</span>
+                        <div>
+                            <strong>Oliver!</strong>
+                            <p>
+                                Adaptación musical de Oliver Twist,
+                                la historia de un huérfano que sobrevive
+                                en las calles de Londres.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1969</span>
+                        <div>
+                            <strong>Midnight Cowboy</strong>
+                            <p>
+                                Drama sobre dos hombres que buscan
+                                sobrevivir en Nueva York. Ganó el Óscar
+                                a mejor película en la ceremonia de 1970.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <p class="nota">
+                    Nota: los años de la lista corresponden al estreno
+                    de las películas, no a la ceremonia de premiación.
+                </p>
+            </section>
+
+            <!-- IMPORTANCIA DE LOS AÑOS 60 -->
+            <div class="row">
+
+                <div class="col-6 col-12-medium">
+                    <section class="bloque-extra">
+                        <h3>¿Qué hizo especial a esta década?</h3>
+                        <ul>
+                            <li>El auge del cine de autor en Europa.</li>
+                            <li>Películas que abordaron cambios sociales y políticos.</li>
+                            <li>Grandes musicales y producciones épicas.</li>
+                            <li>Avances en los efectos visuales y la ciencia ficción.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="col-6 col-12-medium">
+                    <section class="bloque-extra">
+                        <h3>¿Por dónde empezar?</h3>
+                        <p>
+                            Para el suspense, mira <em>Psycho</em>.
+                            Si prefieres la ciencia ficción, elige
+                            <em>2001: A Space Odyssey</em>. Para el western,
+                            prueba <em>The Good, the Bad and the Ugly</em>;
+                            y si te gustan los musicales, comienza con
+                            <em>The Sound of Music</em>.
+                        </p>
+                    </section>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Cine Clásico | Un recorrido por las grandes
+                        películas de los años 60.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRÉDITOS -->
+    <div id="copyright">
+        &copy; Cine Clásico. Página educativa.
+        Diseño basado en Halcyonic de HTML5 UP.
+    </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

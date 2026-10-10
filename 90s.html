@@ -1,0 +1,518 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 90</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+            background-color: #101010;
+            color: #eeeeee;
+        }
+
+        #header {
+            background-color: #181818;
+            border-bottom: 2px solid #f0c66b;
+        }
+
+        #logo {
+            color: #f0c66b;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #nav a:hover,
+        #nav a.current {
+            color: #f0c66b;
+        }
+
+        #main {
+            background-color: #101010;
+            padding: 35px 0;
+        }
+
+        h1, h2, h3 {
+            color: #f0c66b;
+        }
+
+        p {
+            color: #dddddd;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* GALERÍA DE PELÍCULAS */
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .pelicula {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            min-width: 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        .pelicula img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #292929;
+        }
+
+        .pelicula h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .pelicula p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .pelicula strong {
+            color: #f0c66b;
+        }
+
+        /* LISTA DE LOS ÓSCAR */
+
+        .oscar {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .oscar h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .oscar > p {
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .oscar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .oscar li {
+            padding: 12px 10px;
+            border-bottom: 1px solid #383838;
+            line-height: 1.6;
+        }
+
+        .oscar li:last-child {
+            border-bottom: none;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+        }
+
+        /* PIE DE PÁGINA */
+
+        #footer {
+            background-color: #181818;
+            border-top: 2px solid #f0c66b;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        #footer p {
+            margin: 0;
+        }
+
+        /* TABLET */
+
+        @media screen and (max-width: 980px) {
+            .peliculas {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* CELULAR */
+
+        @media screen and (max-width: 736px) {
+            #main {
+                padding: 25px 0;
+            }
+
+            .peliculas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .pelicula {
+                padding: 10px;
+            }
+
+            .pelicula h3 {
+                font-size: 15px;
+            }
+
+            .pelicula p {
+                font-size: 12px;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
+
+            .oscar {
+                padding: 18px;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            .peliculas {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Grandes Películas de los Años 90
+                        </a>
+                    </h1>
+
+                    <!-- MENÚ DE NAVEGACIÓN -->
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="main">
+        <div class="container">
+
+            <!-- INTRODUCCIÓN -->
+            <div class="intro">
+                <h2>El mejor cine de los años 90</h2>
+
+                <p>
+                    Los años 90 fueron una época memorable para el cine.
+                    El cine independiente ganó reconocimiento, los efectos
+                    especiales evolucionaron y aparecieron historias que
+                    marcaron a toda una generación. Desde la ciencia ficción
+                    hasta el drama, la animación y el suspenso, esta década
+                    dejó películas que siguen siendo clásicos.
+                </p>
+            </div>
+
+            <!-- GALERÍA DE 10 PELÍCULAS -->
+            <div class="peliculas">
+
+                <!-- 1 -->
+                <article class="pelicula">
+                    <img src="images/goodfellas.jpg"
+                         alt="Cartel de Buenos muchachos"
+                         loading="lazy">
+
+                    <h3>Buenos muchachos</h3>
+                    <p><strong>Año:</strong> 1990</p>
+                    <p><strong>Director:</strong> Martin Scorsese</p>
+                    <p><strong>Género:</strong> Crimen y drama</p>
+                    <p>Three decades of life in the mafia.</p>
+                    <p>
+                        La verdadera historia de Henry Hill, un chico de Brooklyn, mitad irlandés y mitad siciliano, que es adoptado a temprana edad por gánsteres del barrio y asciende en las filas de una familia mafiosa bajo la tutela de Jimmy Conway.
+                    </p>
+                </article>
+
+                <!-- 2 -->
+                <article class="pelicula">
+                    <img src="images/terminator2.jpg"
+                         alt="Cartel de Terminator 2: El juicio final"
+                         loading="lazy">
+
+                    <h3>Terminator 2: El juicio final</h3>
+                    <p><strong>Año:</strong> 1991</p>
+                    <p><strong>Director:</strong> James Cameron</p>
+                    <p><strong>Género:</strong> Ciencia ficción y acción</p>
+                    <p>ill be back</p>
+                    <p>
+                        No es nada personal.
+Diez años después de los sucesos de la película original, un T-800 reprogramado es enviado al pasado para proteger al joven John Connor del T-1000, capaz de cambiar de forma. Junto a su madre, Sarah, lucha para impedir que Skynet desencadene un apocalipsis nuclear.
+                    </p>
+                </article>
+
+                <!-- 3 -->
+                <article class="pelicula">
+                    <img src="images/silence-of-the-lambs.jpg"
+                         alt="Cartel de El silencio de los inocentes"
+                         loading="lazy">
+
+                    <h3>El silencio de los inocentes</h3>
+                    <p><strong>Año:</strong> 1991</p>
+                    <p><strong>Director:</strong> Jonathan Demme</p>
+                    <p><strong>Género:</strong> Suspenso y crimen</p>
+                    <p>"A census taker once tried to test me. I ate his liver with some fava beans and a nice Chianti."</p>
+                    <p>
+                        Clarice Starling es una alumna brillante en la academia de entrenamiento del FBI. Jack Crawford quiere que Clarice entreviste al Dr. Hannibal Lecter, un psiquiatra excepcional y un psicópata violento que cumple cadena perpetua por diversos asesinatos y actos de canibalismo. Crawford cree que Lecter podría tener información clave sobre un caso y que Starling, por ser una joven atractiva, podría ser el cebo perfecto para que hable.
+                    </p>
+                </article>
+
+                <!-- 4 -->
+                <article class="pelicula">
+                    <img src="images/jurassic-park.jpg"
+                         alt="Cartel de Parque Jurásico"
+                         loading="lazy">
+
+                    <h3>Parque Jurásico</h3>
+                    <p><strong>Año:</strong> 1993</p>
+                    <p><strong>Director:</strong> Steven Spielberg</p>
+                    <p><strong>Género:</strong> Aventura y ciencia ficción</p>
+                    <p>
+                        Un acaudalado empresario crea en secreto un parque temático con dinosaurios vivos recreados a partir de ADN prehistórico. Antes de la inauguración, invita a un equipo de expertos y a sus dos nietos, llenos de ilusión, a conocer el parque y tranquilizar a los inversores. Sin embargo, el parque resulta ser todo menos divertido, ya que los sistemas de seguridad fallan y los dinosaurios escapan.                    </p>
+                </article>
+
+                <!-- 5 -->
+                <article class="pelicula">
+                    <img src="images/schindlers-list.jpg"
+                         alt="Cartel de La lista de Schindler"
+                         loading="lazy">
+
+                    <h3>La lista de Schindler</h3>
+                    <p><strong>Año:</strong> 1993</p>
+                    <p><strong>Director:</strong> Steven Spielberg</p>
+                    <p><strong>Género:</strong> Drama histórico</p>
+                    <p>WHOEVER SAVES ONE LIFE SAVES THE WORLD ENTIRE</p>
+                    <p>
+                     La verdadera historia de cómo el empresario Oskar Schindler salvó más de mil vidas judías de los nazis mientras trabajaban como esclavos en su fábrica durante la Segunda Guerra Mundial.
+                    </p>
+                </article>
+
+                <!-- 6 -->
+                <article class="pelicula">
+                    <img src="images/SR.jpg"
+                         alt="Cartel de Forrest Gump"
+                         loading="lazy">
+
+                    <h3>shawshank redemption</h3>
+                    <p><strong>Año:</strong> 1994</p>
+                    <p><strong>Director:</strong>Frank Darabont</p>
+                    <p><strong>Género:</strong> Drama</p>
+                    <p>Fear can hold you prisoner. Hope can set you free.</p>
+                    <p>
+                        Encarcelado en la década de 1940 por el doble asesinato de su esposa y su amante, el honrado banquero Andy Dufresne comienza una nueva vida en la prisión de Shawshank, donde pone sus habilidades contables al servicio de un alcaide sin escrúpulos. Durante su larga estancia en prisión, Dufresne se gana la admiración de los demás reclusos, incluido un preso mayor llamado Red, por su integridad y su inquebrantable esperanza.
+                    </p>
+                </article>
+
+                <!-- 7 -->
+                <article class="pelicula">
+                    <img src="images/pulp-fiction.jpg"
+                         alt="Cartel de Pulp Fiction"
+                         loading="lazy">
+
+                    <h3>Pulp Fiction</h3>
+                    <p><strong>Año:</strong> 1994</p>
+                    <p><strong>Director:</strong> Quentin Tarantino</p>
+                    <p><strong>Género:</strong> Crimen</p>
+                    <p>
+                      No conocerás los hechos hasta que hayas visto la ficción.
+Un sicario aficionado a las hamburguesas, su socio filósofo, la amante de un gánster adicta a las drogas y un boxeador venido a menos convergen en esta extensa y cómica historia de crímenes. Sus aventuras se desarrollan en tres relatos que viajan ingeniosamente entre el pasado y el presente.
+                    </p>
+                </article>
+
+                <!-- 8 -->
+                <article class="pelicula">
+                    <img src="images/ahx.jpg"
+                         alt="Cartel de Toy Story"
+                         loading="lazy">
+
+                    <h3>American History x</h3>
+                    <p><strong>Año:</strong> 1998</p>
+                    <p><strong>Director:</strong>Tony Kaye</p>
+                    <p><strong>Género:</strong>Drama </p>
+                    <p>some legacies must end</p>
+                    <p>
+                        Derek Vineyard sale en libertad condicional tras cumplir tres años de prisión por el asesinato de dos hombres afroamericanos. A través de la narración de su hermano, Danny Vineyard, descubrimos que antes de ir a prisión, Derek era un cabeza rapada y el líder de una violenta pandilla supremacista blanca que cometía crímenes racistas en todo Los Ángeles, y que sus acciones influyeron enormemente en Danny. Reformado y recién salido de prisión, Derek rompe todo contacto con la pandilla y se propone proteger a Danny …
+                    </p>
+                </article>
+
+                <!-- 9 -->
+                <article class="pelicula">
+                    <img src="images/titanic.jpg"
+                         alt="Cartel de Titanic"
+                         loading="lazy">
+
+                    <h3>Titanic</h3>
+                    <p><strong>Año:</strong> 1997</p>
+                    <p><strong>Director:</strong> James Cameron</p>
+                    <p><strong>Género:</strong> Romance y drama</p>
+                    <p>Nothing on earth could come between them.</p>
+                    <p>
+                        A bordo del famoso transatlántico, Jack y Rose
+                        se enamoran pese a sus diferencias sociales.
+                        Su relación se desarrolla mientras el barco
+                        se aproxima a la tragedia de 1912. La película
+                        destacó por su escala, efectos y banda sonora.
+                    </p>
+                </article>
+
+                <!-- 10 -->
+                <article class="pelicula">
+                    <img src="images/lveb.jpg"
+                         alt="Cartel de Matrix"
+                         loading="lazy">
+
+                    <h3>life is beutiful</h3>
+                    <p><strong>Año:</strong> 1999</p>
+                    <p><strong>Directores:</strong></p>
+                    <p><strong>Género:</strong>drama y comedia</p>
+                    <p>An unforgettable fable that proves love, family and imagination conquer all.</p>
+                    <p>
+                        Una conmovedora historia sobre un librero italiano de ascendencia judía que vive en su propio cuento de hadas. Su vida creativa y feliz se ve truncada abruptamente cuando toda su familia es deportada a un campo de concentración durante la Segunda Guerra Mundial. Encarcelado, intenta convencer a su hijo de que todo es solo un juego.
+                    </p>
+                </article>
+
+            </div>
+
+            <!-- GANADORAS DEL ÓSCAR -->
+            <section class="oscar">
+                <h2>Ganadoras del Óscar a Mejor Película</h2>
+
+                <p>
+                    Esta lista organiza las películas por el año de estreno.
+                    La ceremonia del Óscar se celebra normalmente al año
+                    siguiente.
+                </p>
+
+                <ul>
+                    <li>
+                        <span class="anio">1990:</span>
+                        <em>Danza con lobos</em> — premio entregado en 1991.
+                    </li>
+
+                    <li>
+                        <span class="anio">1991:</span>
+                        <em>El silencio de los inocentes</em> — premio entregado en 1992.
+                    </li>
+
+                    <li>
+                        <span class="anio">1992:</span>
+                        <em>Los imperdonables</em> — premio entregado en 1993.
+                    </li>
+
+                    <li>
+                        <span class="anio">1993:</span>
+                        <em>La lista de Schindler</em> — premio entregado en 1994.
+                    </li>
+
+                    <li>
+                        <span class="anio">1994:</span>
+                        <em>Forrest Gump</em> — premio entregado en 1995.
+                    </li>
+
+                    <li>
+                        <span class="anio">1995:</span>
+                        <em>Corazón valiente</em> — premio entregado en 1996.
+                    </li>
+
+                    <li>
+                        <span class="anio">1996:</span>
+                        <em>El paciente inglés</em> — premio entregado en 1997.
+                    </li>
+
+                    <li>
+                        <span class="anio">1997:</span>
+                        <em>Titanic</em> — premio entregado en 1998.
+                    </li>
+
+                    <li>
+                        <span class="anio">1998:</span>
+                        <em>Shakespeare enamorado</em> — premio entregado en 1999.
+                    </li>
+
+                    <li>
+                        <span class="anio">1999:</span>
+                        <em>American Beauty</em> — premio entregado en 2000.
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <div id="footer">
+        <div class="container">
+            <p>
+                Cine Clásico | Historia del cine
+            </p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE LA PLANTILLA -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</div>
+</body>
+</html>

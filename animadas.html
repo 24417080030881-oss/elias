@@ -1,0 +1,735 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas Animadas</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #101010;
+            color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            background: #080808;
+            border-bottom: 2px solid #d4af37;
+            padding: 22px 6%;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #e5c158;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .inicio {
+            padding: 11px 20px;
+            border: 1px solid #d4af37;
+            border-radius: 5px;
+            color: #e5c158;
+            transition: 0.3s;
+        }
+
+        .inicio:hover {
+            background: #d4af37;
+            color: #101010;
+        }
+
+        /* PORTADA */
+
+        .hero {
+            min-height: 320px;
+            padding: 65px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.82),
+                    rgba(0, 0, 0, 0.90)
+                ),
+                url("images/a.jpg") center/cover no-repeat;
+            border-bottom: 1px solid #393126;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            margin: 0 0 18px;
+            color: #e5c158;
+            font-size: clamp(32px, 5vw, 54px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #dddddd;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* CONTENIDO */
+
+        .contenido {
+            width: 90%;
+            max-width: 1200px;
+            margin: 55px auto;
+        }
+
+        .titulo-seccion {
+            margin-bottom: 12px;
+            color: #e5c158;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .descripcion-seccion {
+            max-width: 800px;
+            margin: 0 auto 35px;
+            color: #c8c8c8;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* CUADRÍCULA DE PELÍCULAS */
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 28px 20px;
+        }
+
+        .pelicula {
+            min-width: 0;
+            overflow: hidden;
+            background: #191919;
+            border: 1px solid #393126;
+            border-radius: 8px;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-6px);
+            border-color: #d4af37;
+        }
+
+        /* PÓSTER VERTICAL: NO RECORTAR LA IMAGEN */
+
+        .poster {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #080808;
+            border-bottom: 1px solid #393126;
+        }
+
+        .poster img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .info-pelicula {
+            padding: 16px;
+        }
+
+        .info-pelicula h3 {
+            margin: 0 0 10px;
+            color: #e5c158;
+            font-size: 17px;
+            line-height: 1.4;
+        }
+
+        .anio {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: #101010;
+            background: #d4af37;
+            padding: 5px 9px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .info-pelicula p {
+            margin: 0;
+            color: #cccccc;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* TABLA DE PREMIOS */
+
+        .premios {
+            margin-top: 75px;
+        }
+
+        .tabla-contenedor {
+            overflow-x: auto;
+            border: 1px solid #393126;
+            border-radius: 7px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #171717;
+        }
+
+        th,
+        td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #383838;
+            text-align: left;
+        }
+
+        th {
+            background: #292319;
+            color: #e5c158;
+        }
+
+        td {
+            color: #e0e0e0;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #242424;
+        }
+
+        .nota {
+            margin-top: 15px;
+            color: #aaaaaa;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* BOTÓN FINAL */
+
+        .volver {
+            margin: 50px 0 65px;
+            text-align: center;
+        }
+
+        .boton-volver {
+            display: inline-block;
+            padding: 14px 25px;
+            color: #101010;
+            background: #d4af37;
+            border: 1px solid #d4af37;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton-volver:hover {
+            color: #e5c158;
+            background: transparent;
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            padding: 25px 15px;
+            color: #aaaaaa;
+            background: #080808;
+            border-top: 1px solid #393126;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 1000px) {
+            .peliculas {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        /* TELÉFONOS */
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            .header-container {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .logo {
+                width: 100%;
+                font-size: 21px;
+            }
+
+            .hero {
+                min-height: 270px;
+                padding: 45px 18px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .contenido {
+                width: 92%;
+                margin: 40px auto;
+            }
+
+            .titulo-seccion {
+                font-size: 25px;
+            }
+
+            .peliculas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px 12px;
+            }
+
+            .info-pelicula {
+                padding: 11px;
+            }
+
+            .info-pelicula h3 {
+                font-size: 15px;
+            }
+
+            .info-pelicula p {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 11px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="header-container">
+            <a class="logo" href="index.html">
+                HISTORIA DEL CINE
+            </a>
+
+            <a class="inicio" href="index.html">
+                ← Inicio
+            </a>
+        </div>
+    </header>
+
+    <!-- PORTADA -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Grandes Películas Animadas</h1>
+
+            <p>
+                Un recorrido por algunas de las películas animadas más
+                importantes de la historia, desde las obras clásicas
+                dibujadas a mano hasta las producciones modernas que
+                transformaron el cine.
+            </p>
+        </div>
+    </section>
+
+    <!-- PELÍCULAS -->
+    <main class="contenido">
+
+        <h2 class="titulo-seccion">Películas imprescindibles</h2>
+
+        <p class="descripcion-seccion">
+            Descubre diez películas animadas que destacan por sus historias,
+            personajes, música, creatividad e influencia en la industria
+            cinematográfica.
+        </p>
+
+        <section class="peliculas">
+
+            <!-- 1 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/akira.jpg"
+                         alt="Póster de Akira"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">1988</span>
+                    <h3>Akira</h3>
+                    <p>
+                        Clásico japonés de ciencia ficción dirigido por
+                        Katsuhiro Otomo. Destaca por su animación detallada
+                        y su visión de un futuro distópico.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/la-tumba-luciernagas.jpg"
+                         alt="Póster de La tumba de las luciérnagas"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">1988</span>
+                    <h3>La tumba de las luciérnagas</h3>
+                    <p>
+                        Drama animado japonés sobre dos hermanos que
+                        intentan sobrevivir durante los últimos meses
+                        de la Segunda Guerra Mundial.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/lion-king.jpg"
+                         alt="Póster de El rey león"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">1994</span>
+                    <h3>El rey león</h3>
+                    <p>
+                        La historia de Simba, un joven león que debe
+                        afrontar la pérdida, descubrir su identidad
+                        y recuperar su lugar en la sabana.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/toy-story.jpg"
+                         alt="Póster de Toy Story"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">1995</span>
+                    <h3>Toy Story</h3>
+                    <p>
+                        Primera película realizada completamente con
+                        animación por computadora. Presenta las aventuras
+                        de Woody, Buzz y los juguetes de Andy.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/jorobado-notre-dame.jpg"
+                         alt="Póster de El jorobado de Notre Dame"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">1996</span>
+                    <h3>El jorobado de Notre Dame</h3>
+                    <p>
+                        Película de Disney inspirada en la novela de
+                        Victor Hugo. Explora la aceptación, la justicia
+                        y los prejuicios sociales.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/principe-egipto.jpg"
+                         alt="Póster de El príncipe de Egipto"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">1998</span>
+                    <h3>El príncipe de Egipto</h3>
+                    <p>
+                        Relata la historia de Moisés y su relación con
+                        Ramsés, combinando animación tradicional,
+                        música y grandes escenarios.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/shrek.jpg"
+                         alt="Póster de Shrek"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">2001</span>
+                    <h3>Shrek</h3>
+                    <p>
+                        Una comedia que juega con los cuentos de hadas
+                        y sigue a un ogro que emprende una aventura
+                        junto a Burro para rescatar a Fiona.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/spirited-away.jpg"
+                         alt="Póster de El viaje de Chihiro"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">2001</span>
+                    <h3>El viaje de Chihiro</h3>
+                    <p>
+                        La obra de Hayao Miyazaki acompaña a Chihiro
+                        en un mundo mágico. Ganó el Óscar a mejor
+                        película animada.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 9 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/wall-e.jpg"
+                         alt="Póster de WALL-E"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">2008</span>
+                    <h3>WALL·E</h3>
+                    <p>
+                        Un pequeño robot recolector de basura inicia
+                        una aventura espacial que reflexiona sobre
+                        el medioambiente, el consumo y la humanidad.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 10 -->
+            <article class="pelicula">
+                <div class="poster">
+                    <img src="images2/spider-verse.jpg"
+                         alt="Póster de Spider-Man: Un nuevo universo"
+                         loading="lazy">
+                </div>
+
+                <div class="info-pelicula">
+                    <span class="anio">2018</span>
+                    <h3>Spider-Man: Un nuevo universo</h3>
+                    <p>
+                        Miles Morales descubre lo que significa ser
+                        Spider-Man en una aventura que combina
+                        diferentes estilos visuales de animación.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- PREMIOS ÓSCAR -->
+        <section class="premios">
+
+            <h2 class="titulo-seccion">
+                Ganadores del Óscar a mejor película animada
+            </h2>
+
+            <p class="descripcion-seccion">
+                Una selección de ganadores desde 2002 hasta 2025.
+                Se indica el año de la ceremonia y la película premiada.
+            </p>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Año de ceremonia</th>
+                            <th>Película ganadora</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>2002</td>
+                            <td>Shrek</td>
+                        </tr>
+                        <tr>
+                            <td>2003</td>
+                            <td>El viaje de Chihiro</td>
+                        </tr>
+                        <tr>
+                            <td>2004</td>
+                            <td>Buscando a Nemo</td>
+                        </tr>
+                        <tr>
+                            <td>2005</td>
+                            <td>Los increíbles</td>
+                        </tr>
+                        <tr>
+                            <td>2006</td>
+                            <td>Wallace y Gromit: La batalla de los vegetales</td>
+                        </tr>
+                        <tr>
+                            <td>2007</td>
+                            <td>Happy Feet</td>
+                        </tr>
+                        <tr>
+                            <td>2008</td>
+                            <td>Ratatouille</td>
+                        </tr>
+                        <tr>
+                            <td>2009</td>
+                            <td>WALL·E</td>
+                        </tr>
+                        <tr>
+                            <td>2010</td>
+                            <td>Up</td>
+                        </tr>
+                        <tr>
+                            <td>2011</td>
+                            <td>Toy Story 3</td>
+                        </tr>
+                        <tr>
+                            <td>2012</td>
+                            <td>Rango</td>
+                        </tr>
+                        <tr>
+                            <td>2013</td>
+                            <td>Valiente</td>
+                        </tr>
+                        <tr>
+                            <td>2014</td>
+                            <td>Frozen</td>
+                        </tr>
+                        <tr>
+                            <td>2015</td>
+                            <td>Grandes héroes</td>
+                        </tr>
+                        <tr>
+                            <td>2016</td>
+                            <td>Intensa-Mente</td>
+                        </tr>
+                        <tr>
+                            <td>2017</td>
+                            <td>Zootopia</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>Coco</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>Spider-Man: Un nuevo universo</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td>Toy Story 4</td>
+                        </tr>
+                        <tr>
+                            <td>2021</td>
+                            <td>Soul</td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td>Encanto</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>Pinocho de Guillermo del Toro</td>
+                        </tr>
+                        <tr>
+                            <td>2024</td>
+                            <td>El chico y la garza</td>
+                        </tr>
+                        <tr>
+                            <td>2025</td>
+                            <td>Flow</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="nota">
+                Nota: el año indicado corresponde a la ceremonia de entrega
+                de los premios Óscar, no necesariamente al año de estreno
+                de la película.
+            </p>
+
+        </section>
+
+        <!-- VOLVER AL MENÚ -->
+        <div class="volver">
+            <a class="boton-volver" href="index.html">
+                ← VOLVER AL MENÚ PRINCIPAL
+            </a>
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>Historia del Cine | Grandes Películas Animadas</p>
+    </footer>
+
+</body>
+</html>

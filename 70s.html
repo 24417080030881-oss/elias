@@ -1,0 +1,513 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 70</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+            background-color: #101010;
+            color: #eeeeee;
+        }
+
+        #header {
+            background-color: #181818;
+            border-bottom: 2px solid #f0c66b;
+        }
+
+        #logo {
+            color: #f0c66b;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #nav a:hover,
+        #nav a.current {
+            color: #f0c66b;
+        }
+
+        #main {
+            background-color: #101010;
+            padding: 35px 0;
+        }
+
+        h1, h2, h3 {
+            color: #f0c66b;
+        }
+
+        p {
+            color: #dddddd;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* GALERÍA DE PELÍCULAS */
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .pelicula {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            min-width: 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        .pelicula img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #292929;
+        }
+
+        .pelicula h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .pelicula p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .pelicula strong {
+            color: #f0c66b;
+        }
+
+        /* LISTA DE LOS ÓSCAR */
+
+        .oscar {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .oscar h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .oscar > p {
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .oscar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .oscar li {
+            padding: 12px 10px;
+            border-bottom: 1px solid #383838;
+            line-height: 1.6;
+        }
+
+        .oscar li:last-child {
+            border-bottom: none;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+        }
+
+        /* PIE DE PÁGINA */
+
+        #footer {
+            background-color: #181818;
+            border-top: 2px solid #f0c66b;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        #footer p {
+            margin: 0;
+        }
+
+        /* TABLET */
+
+        @media screen and (max-width: 980px) {
+            .peliculas {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* CELULAR */
+
+        @media screen and (max-width: 736px) {
+            #main {
+                padding: 25px 0;
+            }
+
+            .peliculas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .pelicula {
+                padding: 10px;
+            }
+
+            .pelicula h3 {
+                font-size: 15px;
+            }
+
+            .pelicula p {
+                font-size: 12px;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
+
+            .oscar {
+                padding: 18px;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            .peliculas {
+                grid-template-columns: 1fr;
+            }
+
+            .pelicula img {
+                aspect-ratio: 3 / 4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Grandes Películas de los Años 70
+                        </a>
+                    </h1>
+
+                    <!-- MENÚ DE NAVEGACIÓN -->
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                                            
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div id="main">
+        <div class="container">
+
+            <!-- INTRODUCCIÓN -->
+            <div class="intro">
+                <h2>El mejor cine de los años 70</h2>
+
+                <p>
+                    Los años 70 transformaron la historia del cine con
+                    directores innovadores, historias memorables y nuevas
+                    formas de contar relatos. Esta década destacó por sus
+                    grandes dramas, películas de terror, ciencia ficción
+                    y clásicos que siguen siendo importantes hoy.
+                </p>
+            </div>
+
+            <!-- GALERÍA: 10 PELÍCULAS -->
+            <div class="peliculas">
+
+                <article class="pelicula">
+                    <img src="images/a-clockwork-orange.jpg"
+                         alt="Cartel de La naranja mecánica"
+                         loading="lazy">
+
+                    <h3>La naranja mecánica</h3>
+                    <p><strong>Año:</strong> 1971</p>
+                    <p><strong>Director:</strong> Stanley Kubrick</p>
+                    <p>
+                        <P>LOVERS OF BEETHOVEN<P>
+                        En una Gran Bretaña de un futuro cercano, el joven Alexander DeLarge y sus amigos se divierten golpeando y violando a quien les plazca. Cuando no está destruyendo la vida de otros, Alex se deleita con la música de Beethoven. El estado, deseoso de reprimir la delincuencia juvenil, le ofrece a Alex, que se encuentra encarcelado, la opción de someterse a un procedimiento invasivo que le arrebatará toda autonomía. En una época donde la conciencia es un bien preciado, ¿podrá Alex cambiar de opinión?
+
+
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/the-godfather.jpg"
+                         alt="Cartel de El padrino"
+                         loading="lazy">
+
+                    <h3>El padrino</h3>
+                    <p><strong>Año:</strong> 1974</p>
+                    <p><strong>Director:</strong> Francis Ford Coppola</p>
+                    <p>
+                        <P>AN OFFER THAT YOU CANT REFUSE<P>
+                        El auge y la caída del imperio Corleone.
+En la saga de la familia criminal Corleone, el joven Vito Corleone crece en Sicilia y en el Nueva York de la década de 1910. En la década de 1950, Michael Corleone intenta expandir el negocio familiar a Las Vegas, Hollywood y Cuba.
+
+
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/the-exorcist.jpg"
+                         alt="Cartel de El exorcista"
+                         loading="lazy">
+
+                    <h3>El exorcista</h3>
+                    <p><strong>Año:</strong> 1973</p>
+                    <p><strong>Director:</strong> William Friedkin</p>
+                    <p>
+                        <P>THE POWER OF CHRIST COMPELS YOU <P>
+                        
+                        algo casi incomprensible le está sucediendo a una chica en esta calle, en esta casa… Y han mandado llamar a un hombre como último recurso. Este hombre es El Exorcista.
+Cuando una misteriosa entidad posee a una niña, su madre busca la ayuda de dos sacerdotes católicos para salvarle la vida.
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/chinatown.jpg"
+                         alt="Cartel de Chinatown"
+                         loading="lazy">
+
+                    <h3>Chinatown</h3>
+                    <p><strong>Año:</strong> 1974</p>
+                    <p><strong>Director:</strong> Roman Polanski</p>
+                    <p>
+                You get tough. You get tender. You get close to each other. Maybe you even get close to the truth.
+                    </p>
+                    <p>El detective privado Jake Gittes vive de la turbia moralidad del sur de California, antes de la Segunda Guerra Mundial, bañado por el sol. Contratado por una bella dama de la alta sociedad para investigar la infidelidad de su marido, Gittes se ve envuelto en un torbellino de intrigas y engaños mortales, descubriendo una red de escándalos personales y políticos que se entrelazan sin cesar.</p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/jaws.jpg"
+                         alt="Cartel de Tiburón"
+                         loading="lazy">
+
+                    <h3>Tiburón</h3>
+                    <p><strong>Año:</strong> 1975</p>
+                    <p><strong>Director:</strong> Steven Spielberg</p>
+                    <p>
+                        La aterradora película basada en el aterrador libro número 1 en ventas.
+Cuando la comunidad costera de Amity se ve atacada por un peligroso tiburón blanco, el jefe de policía del pueblo, una joven bióloga marina y un curtido cazador de tiburones se embarcan en una desesperada misión para matar a la bestia antes de que vuelva a atacar.
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/taxi-driver.jpg"
+                         alt="Cartel de Taxi Driver"
+                         loading="lazy">
+
+                    <h3>Taxi Driver</h3>
+                    <p><strong>Año:</strong> 1976</p>
+                    <p><strong>Director:</strong> Martin Scorsese</p>
+                    <p>
+                        <P>ARE YOU TALKING TO ME? <P>
+                        En cada calle de cada ciudad de este país, hay un don nadie que sueña con ser alguien. Es un hombre solitario y olvidado, desesperado por demostrar que está vivo.
+Travis Bickle, un solitario perturbado que sufre de insomnio, acepta un trabajo como taxista en la ciudad de Nueva York, recorriendo las calles cada noche y desconectándose cada vez más de la realidad mientras sueña con limpiar la sucia ciudad.
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/halloween.jpg"
+                         alt="Cartel de Star Wars"
+                         loading="lazy">
+
+                    <h3>halloween</h3>
+                    <p><strong>Año:</strong> 1978</p>
+                    <p><strong>Director:</strong>john carpenter</p>
+                    <p>
+                    ¡La noche que volvió a casa!
+Quince años después de asesinar a su hermana en la noche de Halloween de 1963, Michael Myers escapa de un hospital psiquiátrico y regresa al pequeño pueblo de Haddonfield, Illinois, para matar de nuevo.
+
+
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/the-deer-hunter.jpg"
+                         alt="Cartel de El francotirador"
+                         loading="lazy">
+
+                    <h3>El francotirador</h3>
+                    <p><strong>Año:</strong> 1978</p>
+                    <p><strong>Director:</strong> Michael Cimino</p>
+                    <p>
+                        ¡Una de las películas más importantes y poderosas de todos los tiempos!
+Tres trabajadores siderúrgicos se alistan en el ejército y son enviados a Vietnam; uno deja atrás un matrimonio precipitado, los otros un amor compartido. Lo que viven durante la guerra cambia sus vidas para siempre.
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/alien.jpg"
+                         alt="Cartel de Alien, el octavo pasajero"
+                         loading="lazy">
+
+                    <h3>Alien, el octavo pasajero</h3>
+                    <p><strong>Año:</strong> 1979</p>
+                    <p><strong>Director:</strong> Ridley Scott</p>
+                    
+                        <P>IN THE SPACE NOBODY CAN HEAR YOU SCREAM <P>
+                    <p>
+                    Durante su regreso a la Tierra, la nave espacial comercial Nostromo intercepta una señal de socorro proveniente de un planeta distante. Cuando un equipo de tres tripulantes descubre una cámara con miles de huevos en dicho planeta, una criatura dentro de uno de ellos ataca a un explorador. La tripulación desconoce la inminente pesadilla que se avecina cuando el parásito alienígena implantado en su desafortunado huésped nazca.    
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/apocalypse-now.jpg"
+                         alt="Cartel de Apocalypse Now"
+                         loading="lazy">
+
+                    <h3>Apocalypse Now</h3>
+                    <p><strong>Año:</strong> 1979</p>
+                    <p><strong>Director:</strong> Francis Ford Coppola</p>
+                    <p>
+                        <P>THIS IS THE END <P>
+                        En el apogeo de la guerra de Vietnam, el capitán Benjamin Willard es enviado a una peligrosa misión que, oficialmente, "no existe ni existirá jamás". Su objetivo es localizar y eliminar a un misterioso coronel de las Fuerzas Especiales llamado Walter Kurtz, quien ha estado liderando su ejército personal en misiones guerrilleras ilegales en territorio enemigo.
+
+
+                    </p>
+                </article>
+
+            </div>
+
+            <!-- GANADORAS DEL ÓSCAR -->
+            <section class="oscar">
+                <h2>Ganadoras del Óscar a Mejor Película</h2>
+
+                <p>
+                    Estas son las películas ganadoras en las ceremonias
+                    celebradas entre 1970 y 1979. El año indicado es el
+                    de la ceremonia, no necesariamente el de estreno.
+                </p>
+
+                <ul>
+                    <li>
+                        <span class="anio">1970:</span>
+                        <em>Midnight Cowboy</em> — Vaquero de medianoche
+                    </li>
+
+                    <li>
+                        <span class="anio">1971:</span>
+                        <em>Patton</em>
+                    </li>
+
+                    <li>
+                        <span class="anio">1972:</span>
+                        <em>The French Connection</em> — Contacto en Francia
+                    </li>
+
+                    <li>
+                        <span class="anio">1973:</span>
+                        <em>The Godfather</em> — El padrino
+                    </li>
+
+                    <li>
+                        <span class="anio">1974:</span>
+                        <em>The Sting</em> — El golpe
+                    </li>
+
+                    <li>
+                        <span class="anio">1975:</span>
+                        <em>The Godfather Part II</em> — El padrino II
+                    </li>
+
+                    <li>
+                        <span class="anio">1976:</span>
+                        <em>One Flew Over the Cuckoo's Nest</em> —
+                        Atrapado sin salida
+                    </li>
+
+                    <li>
+                        <span class="anio">1977:</span>
+                        <em>Rocky</em>
+                    </li>
+
+                    <li>
+                        <span class="anio">1978:</span>
+                        <em>Annie Hall</em>
+                    </li>
+
+                    <li>
+                        <span class="anio">1979:</span>
+                        <em>The Deer Hunter</em> — El francotirador
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <div id="footer">
+        <div class="container">
+            <p>
+                Rock &amp; Pop Clásico | Historia del cine
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
+

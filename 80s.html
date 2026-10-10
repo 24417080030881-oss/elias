@@ -1,0 +1,492 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 80</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+            background-color: #101010;
+            color: #eeeeee;
+        }
+
+        #header {
+            background-color: #181818;
+            border-bottom: 2px solid #f0c66b;
+        }
+
+        #logo {
+            color: #f0c66b;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #nav a:hover,
+        #nav a.current {
+            color: #f0c66b;
+        }
+
+        #main {
+            background-color: #101010;
+            padding: 35px 0;
+        }
+
+        h1, h2, h3 {
+            color: #f0c66b;
+        }
+
+        p {
+            color: #dddddd;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* GALERÍA DE PELÍCULAS */
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .pelicula {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            min-width: 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        .pelicula img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #292929;
+        }
+
+        .pelicula h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .pelicula p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .pelicula strong {
+            color: #f0c66b;
+        }
+
+        /* LISTA DE LOS ÓSCAR */
+
+        .oscar {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .oscar h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .oscar > p {
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .oscar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .oscar li {
+            padding: 12px 10px;
+            border-bottom: 1px solid #383838;
+            line-height: 1.6;
+        }
+
+        .oscar li:last-child {
+            border-bottom: none;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+        }
+
+        /* PIE DE PÁGINA */
+
+        #footer {
+            background-color: #181818;
+            border-top: 2px solid #f0c66b;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        #footer p {
+            margin: 0;
+        }
+
+        /* TABLET */
+
+        @media screen and (max-width: 980px) {
+            .peliculas {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* CELULAR */
+
+        @media screen and (max-width: 736px) {
+            #main {
+                padding: 25px 0;
+            }
+
+            .peliculas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .pelicula {
+                padding: 10px;
+            }
+
+            .pelicula h3 {
+                font-size: 15px;
+            }
+
+            .pelicula p {
+                font-size: 12px;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
+
+            .oscar {
+                padding: 18px;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            .peliculas {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Grandes Películas de los Años 80
+                        </a>
+                    </h1>
+
+                    <!-- MENÚ DE NAVEGACIÓN -->
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                        
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="main">
+        <div class="container">
+
+            <!-- INTRODUCCIÓN -->
+            <div class="intro">
+                <h2>El mejor cine de los años 80</h2>
+
+                <p>
+                    Los años 80 fueron una época de grandes aventuras,
+                    ciencia ficción, comedia y películas de acción.
+                    Nuevos efectos especiales y personajes inolvidables
+                    convirtieron muchas producciones de esta década en
+                    clásicos de la historia del cine.
+                </p>
+            </div>
+
+            <!-- GALERÍA DE 10 PELÍCULAS -->
+            <div class="peliculas">
+
+                <article class="pelicula">
+                    <img src="images/the-empire-strikes-back.jpg"
+                         alt="Cartel de El imperio contraataca"
+                         loading="lazy">
+
+                    <h3>El imperio contraataca</h3>
+                    <p><strong>Año:</strong> 1980</p>
+                    <p><strong>Director:</strong> Irvin Kershner</p>
+                    <p>im your father</p>
+                    <p>
+                        La épica saga continúa mientras Luke Skywalker, con la esperanza de derrotar al malvado Imperio Galáctico, aprende las enseñanzas Jedi del anciano maestro Yoda. Pero Darth Vader está más decidido que nunca a capturar a Luke. Mientras tanto, la líder rebelde Princesa Leia, el arrogante Han Solo, Chewbacca y los droides C-3PO y R2-D2 se ven envueltos en diversas situaciones de captura, traición y desesperación.
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/raiders-of-the-lost-ark.jpg"
+                         alt="Cartel de En busca del arca perdida"
+                         loading="lazy">
+
+                    <h3>En busca del arca perdida</h3>
+                    <p><strong>Año:</strong> 1981</p>
+                    <p><strong>Director:</strong> Steven Spielberg</p>
+                    <p>
+                        El regreso de la gran aventura.
+Cuando el Dr. Indiana Jones, el profesor vestido de traje de tweed que resulta ser un célebre arqueólogo, es contratado por el gobierno para localizar la legendaria Arca de la Alianza, se encuentra luchando contra todo el régimen nazi.                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/et.jpg"
+                         alt="Cartel de E.T., el extraterrestre"
+                         loading="lazy">
+
+                    <h3>E.T., el extraterrestre</h3>
+                    <p><strong>Año:</strong> 1982</p>
+                    <p><strong>Director:</strong> Steven Spielberg</p>
+                    <p>
+                    He is afraid. He is totally alone. He is 3,000,000 light years from home.
+                    </p>
+                    <p>
+                        Un extraterrestre queda varado en la Tierra y es rescatado por Elliott, un niño de 10 años que decide esconderlo en su casa. Mientras un grupo de investigación busca al alienígena, Elliott, su hermano y su hermana pequeña Gertie entablan una relación afectiva con su nuevo amigo e intentan ayudarlo a encontrar el camino de regreso a casa.</p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/scarface.jpg"
+                         alt="Cartel de Scarface"
+                         loading="lazy">
+
+                    <h3>Scarface</h3>
+                    <p><strong>Año:</strong> 1983</p>
+                    <p><strong>Director:</strong> Brian De Palma</p>
+                    <p> He loved the American Dream. With a vengeance.</p>
+                    <P>
+                    Tras obtener la residencia permanente a cambio del asesinato de un funcionario cubano, Tony Montana se adueña del narcotráfico en Miami. Asesinando brutalmente a cualquiera que se interpusiera en su camino, Tony se convierte en el capo de la droga más poderoso del estado, controlando prácticamente toda la cocaína que pasa por Miami. Sin embargo, la creciente presión policial, las guerras con los cárteles colombianos y su propia paranoia, alimentada por las drogas, avivan las llamas de su eventual caída.
+                    </P>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/AMADEUS.jpg"
+                         alt="Cartel de Los cazafantasmas"
+                         loading="lazy">
+
+                    <h3>amadeus</h3>
+                    <p><strong>Año:</strong> 1984</p>
+                    <p><strong>Director:</strong>milos forman</p>
+                    <p>THE MAN , THE MUSIC , THE MURDER , ,THE MADNESS, THE MOTION PICTURE</p>
+                    <p>
+                         El disciplinado compositor italiano Antonio Salieri se ve consumido por los celos y el resentimiento hacia el joven compositor salzburgués Wolfgang Amadeus Mozart, un joven hedonista y de extraordinario talento.</p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/back-to-the-future.jpg"
+                         alt="Cartel de Volver al futuro"
+                         loading="lazy">
+
+                    <h3>Volver al futuro</h3>
+                    <p><strong>Año:</strong> 1985</p>
+                    <p><strong>Director:</strong> Robert Zemeckis</p>
+                    <p>
+                        He was never in time for his classes… He wasn’t in time for his dinner… Then one day… he wasn’t in his time at all..
+                    </p>
+                    <p>Marty McFly, un adolescente de los años ochenta, viaja accidentalmente en el tiempo hasta 1955, interrumpiendo sin querer el primer encuentro de sus padres y despertando el interés romántico de su madre. Marty debe reparar el daño causado a la historia reavivando el romance de sus padres y, con la ayuda de su excéntrico amigo inventor, Doc Brown, regresar a 1985.</p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/platoon.jpg"
+                         alt="Cartel de Pelotón"
+                         loading="lazy">
+
+                    <h3>Pelotón</h3>
+                    <p><strong>Año:</strong> 1986</p>
+                    <p><strong>Director:</strong> Oliver Stone</p>
+                    <p>
+                      The first casualty of war is innocence
+                    </p>
+                    <p>En Vietnam, Chris Taylor, un joven e ingenuo recluta, se enfrenta a una crisis moral al verse confrontado con los horrores de la guerra y la dualidad del ser humano.</p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/full-metal-jacket.jpg"
+                         alt="full metal jacket"
+                         loading="lazy">
+
+                    <h3>La princesa prometida</h3>
+                    <p><strong>Año:</strong> 1987</p>
+                    <p><strong>Director:</strong> stanley kubrick</p>
+                    <p>
+                        In Vietnam, the wind doesn’t blow. It sucks.
+                    </p>
+                    <p>
+                       Un pragmático marine estadounidense observa los efectos deshumanizadores que la guerra entre Estados Unidos y Vietnam tiene sobre sus compañeros reclutas, desde su brutal entrenamiento en el campo de instrucción hasta los sangrientos combates callejeros en Hue.                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/die-hard.jpg"
+                         alt="Cartel de Duro de matar"
+                         loading="lazy">
+
+                    <h3>Duro de matar</h3>
+                    <p><strong>Año:</strong> 1988</p>
+                    <p><strong>Director:</strong> John McTiernan</p>
+                    <p>
+                        El plan del policía de Nueva York, John McClane, para reconciliarse con su esposa, de quien está separado, se ve seriamente truncado cuando, minutos después de llegar a la fiesta de Navidad de la oficina de ella, todo el edificio es tomado por un grupo de terroristas. Con poca ayuda del Departamento de Policía de Los Ángeles, el ingenioso McClane se propone rescatar a los rehenes y acabar con los malos por su cuenta
+                    </p>
+                </article>
+
+                <article class="pelicula">
+                    <img src="images/dps.jpg"
+                         alt="la sociedad de los poetas muertos"
+                         loading="lazy">
+
+                    <h3>la sociedad de los poetas muertos</h3>
+                    <p><strong>Año:</strong> 1989</p>
+                    <p><strong>Director:</strong>Peter Weir</p>
+                    <p>carpe diem</p>
+                    <p>
+                    En un internado de élite y de tradición clásica en Nueva Inglaterra, un apasionado profesor de inglés inspira a sus alumnos a rebelarse contra las convenciones y a aprovechar el potencial de cada día, ganándose el desdén del severo director                    </p>
+                </article>
+
+            </div>
+
+            <!-- GANADORAS DEL ÓSCAR -->
+            <section class="oscar">
+                <h2>Ganadoras del Óscar a Mejor Película</h2>
+
+                <p>
+                    La siguiente lista corresponde al año de la ceremonia.
+                    Por eso, algunas películas se estrenaron el año anterior.
+                </p>
+
+                <ul>
+                    <li>
+                        <span class="anio">1980:</span>
+                        <em>Kramer vs. Kramer</em>
+                    </li>
+
+                    <li>
+                        <span class="anio">1981:</span>
+                        <em>Ordinary People</em> — Gente como uno
+                    </li>
+
+                    <li>
+                        <span class="anio">1982:</span>
+                        <em>Chariots of Fire</em> — Carros de fuego
+                    </li>
+
+                    <li>
+                        <span class="anio">1983:</span>
+                        <em>Gandhi</em>
+                    </li>
+
+                    <li>
+                        <span class="anio">1984:</span>
+                        <em>Terms of Endearment</em> — La fuerza del cariño
+                    </li>
+
+                    <li>
+                        <span class="anio">1985:</span>
+                        <em>Amadeus</em>
+                    </li>
+
+                    <li>
+                        <span class="anio">1986:</span>
+                        <em>Out of Africa</em> — África mía
+                    </li>
+
+                    <li>
+                        <span class="anio">1987:</span>
+                        <em>Platoon</em> — Pelotón
+                    </li>
+
+                    <li>
+                        <span class="anio">1988:</span>
+                        <em>The Last Emperor</em> — El último emperador
+                    </li>
+
+                    <li>
+                        <span class="anio">1989:</span>
+                        <em>Rain Man</em>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <div id="footer">
+        <div class="container">
+            <p>
+                Rock &amp; | Historia del cine
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- SCRIPTS DE LA PLANTILLA -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

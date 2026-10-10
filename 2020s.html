@@ -1,0 +1,525 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 2020</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+            background-color: #101010;
+            color: #eeeeee;
+        }
+
+        #header {
+            background-color: #181818;
+            border-bottom: 2px solid #f0c66b;
+        }
+
+        #logo {
+            color: #f0c66b;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #nav a:hover,
+        #nav a.current {
+            color: #f0c66b;
+        }
+
+        #main {
+            background-color: #101010;
+            padding: 35px 0;
+        }
+
+        h1, h2, h3 {
+            color: #f0c66b;
+        }
+
+        p {
+            color: #dddddd;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* GALERÍA DE PELÍCULAS */
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .pelicula {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            min-width: 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        .pelicula img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #292929;
+        }
+
+        .pelicula h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .pelicula p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .pelicula strong {
+            color: #f0c66b;
+        }
+
+        .frase {
+            color: #f0c66b !important;
+            font-style: italic;
+        }
+
+        /* LISTA DE LOS ÓSCAR */
+
+        .oscar {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .oscar h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .oscar > p {
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .oscar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .oscar li {
+            padding: 12px 10px;
+            border-bottom: 1px solid #383838;
+            line-height: 1.6;
+        }
+
+        .oscar li:last-child {
+            border-bottom: none;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+        }
+
+        /* PIE DE PÁGINA */
+
+        #footer {
+            background-color: #181818;
+            border-top: 2px solid #f0c66b;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        #footer p {
+            margin: 0;
+        }
+
+        /* TABLET */
+
+        @media screen and (max-width: 980px) {
+            .peliculas {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* CELULAR */
+
+        @media screen and (max-width: 736px) {
+            #main {
+                padding: 25px 0;
+            }
+
+            .peliculas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .pelicula {
+                padding: 10px;
+            }
+
+            .pelicula h3 {
+                font-size: 15px;
+            }
+
+            .pelicula p {
+                font-size: 12px;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
+
+            .oscar {
+                padding: 18px;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            .peliculas {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Grandes Películas de los Años 2020
+                        </a>
+                    </h1>
+
+                    <!-- MENÚ DE NAVEGACIÓN -->
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="main">
+        <div class="container">
+
+            <!-- INTRODUCCIÓN -->
+            <div class="intro">
+                <h2>El mejor cine de los años 2020</h2>
+
+                <p>
+                    El cine de los años 2020 se ha caracterizado por historias
+                    ambiciosas, actuaciones memorables, grandes producciones
+                    y propuestas arriesgadas. La ciencia ficción, el drama,
+                    el terror psicológico y las películas históricas han
+                    destacado en una década que continúa transformando
+                    la industria cinematográfica.
+                </p>
+            </div>
+
+            <!-- GALERÍA DE 10 PELÍCULAS -->
+            <div class="peliculas">
+
+                <!-- 1 -->
+                <article class="pelicula">
+                    <img src="images3/frankenstein.jpg"
+                         alt="Cartel de Frankenstein de Guillermo del Toro"
+                         loading="lazy">
+
+                    <h3>Frankenstein</h3>
+                    <p><strong>Año:</strong> 2025</p>
+                    <p><strong>Director:</strong> Guillermo del Toro</p>
+                    <p><strong>Género:</strong> Terror gótico y drama</p>
+                    <p class="frase">only monsters play god</p>
+                    <p>
+                       El doctor Victor Frankenstein, un científico brillante pero egocéntrico, da vida a una criatura en un experimento monstruoso que, en última instancia, conduce a la ruina tanto del creador como de su trágica creación.
+                    </p>
+                </article>
+
+                <!-- 2 -->
+                <article class="pelicula">
+                    <img src="images3/dune-part-two.jpg"
+                         alt="Cartel de Dune Parte Dos"
+                         loading="lazy">
+
+                    <h3>Dune: Part Two</h3>
+                    <p><strong>Año:</strong> 2024</p>
+                    <p><strong>Director:</strong> Denis Villeneuve</p>
+                    <p><strong>Género:</strong> Ciencia ficción y aventura</p>
+                    <p class="frase">Long live the fighters.</p>
+                    <p>
+                        Sigue la mítica aventura de Paul Atreides mientras se une a Chani y los Fremen en su búsqueda de venganza contra los conspiradores que destruyeron a su familia. Ante la disyuntiva de elegir entre el amor de su vida y el destino del universo conocido, Paul se esfuerza por evitar un futuro terrible que solo él puede prever.
+                    </p>
+                </article>
+
+                <!-- 3 -->
+                <article class="pelicula">
+                    <img src="images3/oppenheimer.jpg"
+                         alt="Cartel de Oppenheimer"
+                         loading="lazy">
+
+                    <h3>Oppenheimer</h3>
+                    <p><strong>Año:</strong> 2023</p>
+                    <p><strong>Director:</strong> Christopher Nolan</p>
+                    <p><strong>Género:</strong> Drama histórico y biográfico</p>
+                    <p class="frase">The world forever changes.</p>
+                    <p>
+                        La película retrata al físico J. Robert Oppenheimer
+                        y su papel en el desarrollo de la bomba atómica
+                        durante la Segunda Guerra Mundial. También muestra
+                        los dilemas morales y políticos que marcaron su vida.
+                    </p>
+                </article>
+
+                <!-- 4 -->
+                <article class="pelicula">
+                    <img src="images3/poor-things.jpg"
+                         alt="Cartel de Poor Things"
+                         loading="lazy">
+
+                    <h3>Poor Things</h3>
+                    <p><strong>Año:</strong> 2023</p>
+                    <p><strong>Director:</strong> Yorgos Lanthimos</p>
+                    <p><strong>Género:</strong> Ciencia ficción y comedia negra</p>
+                    <p class="frase">A fantastical evolution.</p>
+                    <p>
+                    Tras ser resucitada por un científico poco convencional, una joven huye con un abogado en una vertiginosa aventura a través de los continentes. Libre de los prejuicios de su época, reafirma su propósito de luchar por la igualdad y la liberación.
+                    </p>
+                </article>
+
+                <!-- 5 -->
+                <article class="pelicula">
+                    <img src="images3/everything-everywhere.jpg"
+                         alt="Cartel de Everything Everywhere All at Once"
+                         loading="lazy">
+
+                    <h3>Everything Everywhere All at Once</h3>
+                    <p><strong>Año:</strong> 2022</p>
+                    <p><strong>Directores:</strong> Daniel Kwan y Daniel Scheinert</p>
+                    <p><strong>Género:</strong> Ciencia ficción y comedia</p>
+                    <p class="frase">The universe is so much bigger than you realize.</p>
+                    <p>
+                        Evelyn, una inmigrante que atraviesa problemas
+                        familiares y económicos, descubre que puede conectar
+                        con versiones alternativas de sí misma. Su misión
+                        consiste en salvar el multiverso y reconstruir su
+                        relación con su hija.
+                    </p>
+                </article>
+
+                <!-- 6 -->
+                <article class="pelicula">
+                    <img src="images3/babylon.jpg"
+                         alt="Cartel de Babylon"
+                         loading="lazy">
+
+                    <h3>Babylon</h3>
+                    <p><strong>Año:</strong> 2022</p>
+                    <p><strong>Director:</strong> Damien Chazelle</p>
+                    <p><strong>Género:</strong> Drama histórico</p>
+                    <p class="frase">Always make a scene.</p>
+                    <p>
+                        En el Hollywood de finales de los años veinte,
+                        varios artistas intentan alcanzar la fama durante
+                        la transición del cine mudo al sonoro. La película
+                        muestra los excesos, las ambiciones y el precio
+                        de la celebridad.
+                    </p>
+                </article>
+
+                <!-- 7 -->
+                <article class="pelicula">
+                    <img src="images3/judas-and-the-black-messiah.jpg"
+                         alt="Cartel de Judas and the Black Messiah"
+                         loading="lazy">
+
+                    <h3>Judas and the Black Messiah</h3>
+                    <p><strong>Año:</strong> 2021</p>
+                    <p><strong>Director:</strong> Shaka King</p>
+                    <p><strong>Género:</strong> Drama biográfico e histórico</p>
+                    <p class="frase">You can murder a revolutionary, but you can't murder a revolution.</p>
+                    <p>
+                        William O'Neal es reclutado por el FBI para infiltrarse
+                        en el partido Pantera Negra y acercarse a su líder,
+                        Fred Hampton. La historia aborda la traición, la
+                        vigilancia política y la lucha por los derechos civiles.
+                    </p>
+                </article>
+
+                <!-- 8 -->
+                <article class="pelicula">
+                    <img src="images3/conclave.jpg"
+                         alt="Cartel de Conclave"
+                         loading="lazy">
+
+                    <h3>Conclave</h3>
+                    <p><strong>Año:</strong> 2024</p>
+                    <p><strong>Director:</strong> Edward Berger</p>
+                    <p><strong>Género:</strong> Suspenso y drama</p>
+                    <p class="frase">What happens behind these walls will change everything.</p>
+                    <p>
+                        Tras la muerte del papa, el cardenal Lawrence dirige
+                        el proceso secreto para elegir a su sucesor. Mientras
+                        los cardenales compiten por el poder, salen a la luz
+                        secretos que amenazan con alterar el futuro de la Iglesia.
+                    </p>
+                </article>
+
+                <!-- 9 -->
+                <article class="pelicula">
+                    <img src="images3/one-battle-after-another.jpg"
+                         alt="Cartel de One Battle After Another"
+                         loading="lazy">
+
+                    <h3>One Battle After Another</h3>
+                    <p><strong>Año:</strong> 2025</p>
+                    <p><strong>Director:</strong> Paul Thomas Anderson</p>
+                    <p><strong>Género:</strong> Acción, drama y suspenso</p>
+                    <p class="frase">El pasado siempre encuentra la manera de regresar.</p>
+                    <p>
+                        Un antiguo revolucionario vive apartado de la sociedad
+                        hasta que reaparece un enemigo de su pasado y su hija
+                        desaparece. Obligado a actuar, emprende una búsqueda
+                        desesperada que pone a prueba sus convicciones y su
+                        relación familiar.
+                    </p>
+                </article>
+
+                <!-- 10 -->
+                <article class="pelicula">
+                    <img src="images3/the-substance.jpg"
+                         alt="Cartel de The Substance"
+                         loading="lazy">
+
+                    <h3>The Substance</h3>
+                    <p><strong>Año:</strong> 2024</p>
+                    <p><strong>Directora:</strong> Coralie Fargeat</p>
+                    <p><strong>Género:</strong> Terror corporal y suspenso</p>
+                    <p class="frase">Have you ever dreamt of a better version of yourself?</p>
+                    <p>
+                        Una estrella de televisión que teme perder su fama
+                        recurre a un tratamiento misterioso que promete crear
+                        una versión más joven de ella misma. Lo que parece
+                        una oportunidad se convierte en una pesadilla sobre
+                        la obsesión por la belleza y la juventud.
+                    </p>
+                </article>
+
+            </div>
+
+            <!-- GANADORAS DEL ÓSCAR -->
+            <section class="oscar">
+                <h2>Ganadoras del Óscar a Mejor Película</h2>
+
+                <p>
+                    Esta lista está organizada por año de estreno de las
+                    películas. Entre paréntesis se indica el año de la
+                    ceremonia en que recibieron el premio.
+                </p>
+
+                <ul>
+                    <li>
+                        <span class="anio">2020:</span>
+                        <em>Nomadland</em> — Óscar de 2021.
+                    </li>
+
+                    <li>
+                        <span class="anio">2021:</span>
+                        <em>CODA</em> — Óscar de 2022.
+                    </li>
+
+                    <li>
+                        <span class="anio">2022:</span>
+                        <em>Everything Everywhere All at Once</em>
+                        — Óscar de 2023.
+                    </li>
+
+                    <li>
+                        <span class="anio">2023:</span>
+                        <em>Oppenheimer</em> — Óscar de 2024.
+                    </li>
+
+                    <li>
+                        <span class="anio">2024:</span>
+                        <em>Anora</em> — Óscar de 2025.
+                    </li>
+
+                    <li>
+                        <span class="anio">2025:</span>
+                        <em>One Battle After Another</em> — Óscar de 2026.
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <div id="footer">
+        <div class="container">
+            <p>
+                Cine Clásico | Historia del cine
+            </p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE LA PLANTILLA -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</div>
+</body>
+</html>

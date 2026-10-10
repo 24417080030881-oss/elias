@@ -1,0 +1,753 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 40</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* DISEÑO GENERAL */
+        body {
+            background-color: #101010;
+        }
+
+        #header {
+            background: #171717;
+        }
+
+        #logo {
+            color: #f0c66b !important;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #content {
+            background: #151515;
+            color: #eeeeee;
+            padding: 35px 0;
+        }
+
+        #content h2,
+        #content h3,
+        #content h4 {
+            color: #f0c66b;
+        }
+
+        #content p,
+        #content li {
+            color: #dddddd;
+            line-height: 1.7;
+        }
+
+        /* PRESENTACIÓN */
+        .presentacion {
+            text-align: center;
+            padding: 30px 15px;
+            margin-bottom: 30px;
+            background: linear-gradient(
+                135deg,
+                #292018,
+                #111111,
+                #302319
+            );
+            border: 1px solid #72572f;
+            border-radius: 8px;
+        }
+
+        .presentacion h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .presentacion p {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            color: #f0c66b;
+            border: 1px solid #f0c66b;
+            padding: 6px 13px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-size: 0.8em;
+        }
+
+        /* CUADRÍCULA DE 10 PELÍCULAS */
+        .peliculas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            margin: 25px 0 50px;
+        }
+
+        .pelicula {
+            background: #222222;
+            border: 1px solid #45403a;
+            border-radius: 7px;
+            overflow: hidden;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        /* ESPACIO VERTICAL PARA CADA PÓSTER */
+        .poster {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: #302a24;
+        }
+
+        .poster img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s;
+        }
+
+        .pelicula:hover .poster img {
+            transform: scale(1.04);
+        }
+
+        .pelicula-info {
+            padding: 15px;
+        }
+
+        .pelicula-info h3 {
+            font-size: 1.05em;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .genero {
+            display: inline-block;
+            color: #ffffff;
+            background: #493a26;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            margin: 5px 0 10px;
+        }
+
+        .pelicula-info p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* SECCIONES */
+        .seccion-titulo {
+            border-bottom: 2px solid #8b6a35;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .introduccion {
+            margin-bottom: 35px;
+        }
+
+        /* LISTA DE GANADORAS DEL ÓSCAR */
+        .oscar-lista {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .oscar-lista li {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #222222;
+            border-left: 4px solid #c9a04f;
+            border-radius: 4px;
+        }
+
+        .oscar-anio {
+            min-width: 75px;
+            color: #f0c66b;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        .oscar-lista strong {
+            color: #ffffff;
+        }
+
+        .nota {
+            font-size: 0.9em;
+            color: #bbbbbb;
+            font-style: italic;
+        }
+
+        /* BLOQUES INFERIORES */
+        .bloque-extra {
+            background: #222222;
+            border: 1px solid #45403a;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+        }
+
+        .bloque-extra ul {
+            padding-left: 20px;
+        }
+
+        /* PIE DE PÁGINA */
+        #footer {
+            background: #101010;
+            color: #cccccc;
+            padding: 25px 0;
+        }
+
+        #footer p {
+            text-align: center;
+        }
+
+        #copyright {
+            background: #080808;
+            color: #aaaaaa;
+        }
+
+        /* TABLET */
+        @media screen and (max-width: 1000px) {
+            .peliculas-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 18px;
+            }
+        }
+
+        /* CELULAR */
+        @media screen and (max-width: 600px) {
+            .peliculas-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .pelicula-info {
+                padding: 10px;
+            }
+
+            .pelicula-info h3 {
+                font-size: 0.95em;
+            }
+
+            .presentacion h2 {
+                font-size: 1.6em;
+            }
+
+            .oscar-lista li {
+                gap: 10px;
+                padding: 12px;
+            }
+
+            .oscar-anio {
+                min-width: 65px;
+            }
+        }
+    </style>
+</head>
+
+<body class="subpage">
+
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Cine Clásico
+                        </a>
+                    </h1>
+
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                        
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO -->
+    <section id="content">
+        <div class="container">
+
+            <!-- INTRODUCCIÓN -->
+            <div class="presentacion">
+                <span class="etiqueta">LA EDAD DE ORO DEL CINE</span>
+
+                <h2>Las Grandes Películas de los Años 40</h2>
+
+                <p>
+                    La década de 1940 fue una época fundamental para
+                    el cine. El cine negro, el suspense, los dramas
+                    románticos y las historias relacionadas con la
+                    Segunda Guerra Mundial dejaron películas que
+                    todavía influyen en el cine actual.
+                </p>
+            </div>
+
+            <!-- INTRODUCCIÓN AL CATÁLOGO -->
+            <section class="introduccion">
+                <h2 class="seccion-titulo">
+                    10 películas imprescindibles
+                </h2>
+
+                <p>
+                    Descubre diez grandes clásicos de los años 40.
+                    Cada tarjeta incluye el póster de la película,
+                    su año de estreno, género y una breve explicación
+                    de su importancia en la historia del cine.
+                </p>
+            </section>
+
+            <!-- CUADRÍCULA DE PELÍCULAS -->
+            <div class="peliculas-grid">
+
+                <!-- 1 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula1">
+                        <img src="images/rebecca.jpg"
+                             alt="Póster de Rebecca"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula1">
+                        <span class="anio">1940</span>
+                        <h3>Rebecca</h3>
+                        <span class="genero">Suspenso / Drama</span>
+
+                        <p>“Last night I dreamt I went to Manderley again…”</p>
+                        
+                        <p>
+                        Historia de una joven que se casa con un viudo fascinante, solo para descubrir que debe vivir a la sombra de su exesposa, Rebecca, quien murió misteriosamente años atrás. La joven esposa debe enfrentarse al terrible secreto de su apuesto y frío esposo, Max De Winter. También debe lidiar con la celosa y obsesionada señora Danvers, el ama de llaves, quien se niega a aceptarla como la dueña de la casa.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula2">
+                        <img src="images/citizen-kane.jpg"
+                             alt="Póster de Citizen Kane"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula2">
+                        <span class="anio">1941</span>
+                        <h3>Citizen Kane</h3>
+                        <span class="genero">Drama / Misterio</span>
+                        <p>SOMEONE CALLED HIM A HERO OTHER CALLED HIM A HEEL</p>
+                        <p>
+                           El magnate periodístico Charles Foster Kane fue separado de su madre cuando era niño y puesto bajo la tutela de un rico industrial. Como consecuencia, cada acción que emprende a lo largo de su vida, ya sea bienintencionada, tiránica o autodestructiva, parece ser, de alguna manera, una reacción a aquel suceso profundamente traumático.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula3">
+                        <img src="images/casablanca.jpg"
+                             alt="Póster de Casablanca"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula3">
+                        <span class="anio">1942</span>
+                        <h3>Casablanca</h3>
+                        <span class="genero">Romance / Drama</span>
+                        <p>
+                            Rick debe decidir entre recuperar un amor
+                            del pasado o ayudar a dos fugitivos a escapar
+                            durante la guerra. Ganó el Óscar a mejor
+                            película y se convirtió en un clásico.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula4">
+                        <img src="images/double-indemnity.jpg"
+                             alt="Póster de Double Indemnity"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula4">
+                        <span class="anio">1944</span>
+                        <h3>Double Indemnity</h3>
+                        <span class="genero">Cine negro / Suspenso</span>
+                        <p>
+                            Un agente de seguros se involucra en un
+                            plan para cometer un asesinato. Destaca
+                            por su intriga, sus personajes ambiguos
+                            y su influencia en el cine negro.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula5">
+                        <img src="images/mildred-pierce.jpg"
+                             alt="Póster de Mildred Pierce"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula5">
+                        <span class="anio">1945</span>
+                        <h3>Mildred Pierce</h3>
+                        <span class="genero">Drama / Cine negro</span>
+                        <p>
+                            Una madre trabaja para ofrecerle una vida
+                            mejor a su hija, pero sus sacrificios
+                            provocan conflictos familiares. Joan Crawford
+                            ganó el Óscar a mejor actriz.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 6 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula6">
+                        <img src="images/its-a-wonderful-life.jpg"
+                             alt="Póster de It's a Wonderful Life"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula6">
+                        <span class="anio">1946</span>
+                        <h3>It's a Wonderful Life</h3>
+                        <span class="genero">Drama / Fantasía</span>
+                        <p>
+                            Un hombre atraviesa una crisis y descubre
+                            cuánto ha significado su vida para los demás.
+                            Con el tiempo, esta obra de Frank Capra se
+                            convirtió en un clásico navideño.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 7 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula7">
+                        <img src="images/the-best-years-of-our-lives.jpg"
+                             alt="Póster de The Best Years of Our Lives"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula7">
+                        <span class="anio">1946</span>
+                        <h3>The Best Years of Our Lives</h3>
+                        <span class="genero">Drama / Posguerra</span>
+                        <p>
+                            Tres veteranos regresan a casa después
+                            de la Segunda Guerra Mundial y afrontan
+                            dificultades para adaptarse a la vida civil.
+                            Ganó el Óscar a mejor película.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 8 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula8">
+                        <img src="images/the-treasure-of-sierra-madre.jpg"
+                             alt="Póster de The Treasure of the Sierra Madre"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula8">
+                        <span class="anio">1948</span>
+                        <h3>The Treasure of the Sierra Madre</h3>
+                        <span class="genero">Aventura / Drama</span>
+                        <p>
+                            Tres hombres buscan oro en México, pero
+                            la ambición y la desconfianza amenazan
+                            con destruir su alianza. Humphrey Bogart
+                            protagoniza esta historia de codicia.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 9 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula9">
+                        <img src="images/hamlet.jpg"
+                             alt="Póster de Hamlet"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula9">
+                        <span class="anio">1948</span>
+                        <h3>Hamlet</h3>
+                        <span class="genero">Drama / Tragedia</span>
+                        <p>
+                            Laurence Olivier adapta la obra de
+                            Shakespeare sobre un príncipe que busca
+                            descubrir la verdad detrás de la muerte
+                            de su padre. Ganó el Óscar a mejor película.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- 10 -->
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula10">
+                        <img src="images/the-third-man.jpg"
+                             alt="Póster de The Third Man"
+                             loading="lazy">
+                    </a>
+
+                    <div class="pelicula-info" id="pelicula10">
+                        <span class="anio">1949</span>
+                        <h3>The Third Man</h3>
+                        <span class="genero">Misterio / Cine negro</span>
+                        <p>
+                            Un escritor llega a la Viena de posguerra
+                            para investigar la muerte de un amigo.
+                            La fotografía, la música y la atmósfera
+                            la convirtieron en un clásico del suspense.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- GANADORAS DEL ÓSCAR -->
+            <section>
+                <h2 class="seccion-titulo">
+                    Ganadoras del Óscar a Mejor Película
+                </h2>
+
+                <p>
+                    Esta lista corresponde a las películas ganadoras
+                    estrenadas entre 1940 y 1949. El año indicado es
+                    el de estreno de cada película; la ceremonia de
+                    los Óscar se celebró normalmente al año siguiente.
+                </p>
+
+                <ul class="oscar-lista">
+
+                    <li>
+                        <span class="oscar-anio">1940</span>
+                        <div>
+                            <strong>Rebecca</strong>
+                            <p>
+                                Drama de suspenso dirigido por Alfred
+                                Hitchcock. Ganó el Óscar correspondiente
+                                a la temporada de 1940.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1941</span>
+                        <div>
+                            <strong>How Green Was My Valley</strong>
+                            <p>
+                                Drama sobre una familia minera de Gales,
+                                sus dificultades económicas y los cambios
+                                de su comunidad.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1942</span>
+                        <div>
+                            <strong>Mrs. Miniver</strong>
+                            <p>
+                                Historia de una familia británica que
+                                enfrenta los efectos de la Segunda
+                                Guerra Mundial.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1943</span>
+                        <div>
+                            <strong>Casablanca</strong>
+                            <p>
+                                Romance y drama ambientados durante
+                                la guerra, protagonizados por Humphrey
+                                Bogart e Ingrid Bergman.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1944</span>
+                        <div>
+                            <strong>Going My Way</strong>
+                            <p>
+                                Comedia dramática sobre un joven sacerdote
+                                que intenta renovar una parroquia y ayudar
+                                a su comunidad.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1945</span>
+                        <div>
+                            <strong>The Lost Weekend</strong>
+                            <p>
+                                Drama sobre un escritor que lucha contra
+                                el alcoholismo y sus consecuencias
+                                personales.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1946</span>
+                        <div>
+                            <strong>The Best Years of Our Lives</strong>
+                            <p>
+                                Retrato de los desafíos de tres veteranos
+                                al regresar a sus hogares después
+                                de la guerra.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1947</span>
+                        <div>
+                            <strong>Gentleman's Agreement</strong>
+                            <p>
+                                Un periodista se hace pasar por judío
+                                para investigar y denunciar los prejuicios
+                                y la discriminación.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1948</span>
+                        <div>
+                            <strong>Hamlet</strong>
+                            <p>
+                                Adaptación cinematográfica de la tragedia
+                                de Shakespeare, dirigida y protagonizada
+                                por Laurence Olivier.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1949</span>
+                        <div>
+                            <strong>All the King's Men</strong>
+                            <p>
+                                Drama político sobre un hombre que alcanza
+                                el poder y termina corrompido por su propia
+                                ambición.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <p class="nota">
+                    Nota: la lista se organiza por año de estreno
+                    de las películas, no por el año de la ceremonia.
+                </p>
+            </section>
+
+            <!-- IMPORTANCIA DEL CINE DE LOS 40 -->
+            <div class="row">
+
+                <div class="col-6 col-12-medium">
+                    <section class="bloque-extra">
+                        <h3>¿Qué hizo especial a esta década?</h3>
+                        <ul>
+                            <li>El auge del cine negro y las historias de misterio.</li>
+                            <li>Películas que reflejaron la Segunda Guerra Mundial.</li>
+                            <li>Grandes actuaciones y guiones memorables.</li>
+                            <li>El desarrollo de nuevas técnicas de fotografía y narración.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="col-6 col-12-medium">
+                    <section class="bloque-extra">
+                        <h3>¿Por dónde empezar?</h3>
+                        <p>
+                            Para el romance, mira <em>Casablanca</em>.
+                            Si prefieres el suspense, elige <em>Rebecca</em>.
+                            Para descubrir el cine negro, prueba
+                            <em>Double Indemnity</em>; y para un drama
+                            inolvidable, comienza con
+                            <em>It's a Wonderful Life</em>.
+                        </p>
+                    </section>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Cine Clásico | Un recorrido por las grandes
+                        películas de los años 40.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRÉDITOS -->
+    <div id="copyright">
+        &copy; Cine Clásico. Página educativa.
+        Diseño basado en Halcyonic de HTML5 UP.
+    </div>
+
+</div>
+
+<!-- SCRIPTS DE LA PLANTILLA -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
+
+

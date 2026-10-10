@@ -1,0 +1,571 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Historia del Cine</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #080a0f;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ENCABEZADO */
+        #header {
+            position: relative;
+            z-index: 10;
+            background: rgba(8, 10, 15, 0.97);
+            border-bottom: 2px solid #c9a44c;
+            padding: 18px 0;
+        }
+
+        .header-inner {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        #logo {
+            color: #f3cf75;
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        #nav ul {
+            display: flex;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #nav a {
+            display: block;
+            padding: 10px 17px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #nav a:hover,
+        #nav a.active {
+            color: #111;
+            background: #d6b35d;
+        }
+
+        /* PORTADA PRINCIPAL */
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.88)),
+                url("images/fondo-cine.jpg") center/cover no-repeat;
+            border-bottom: 1px solid #42361d;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero .eyebrow {
+            color: #e2bd65;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 18px 0;
+            color: #fff;
+            font-size: clamp(38px, 6vw, 72px);
+            line-height: 1.1;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 20px #000;
+        }
+
+        .hero h1 span {
+            color: #e5bd5d;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #e1e1e1;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 14px 28px;
+            border: 2px solid #d6b35d;
+            border-radius: 4px;
+            background: #d6b35d;
+            color: #101010;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: transparent;
+            color: #f3cf75;
+            transform: translateY(-3px);
+        }
+
+        /* CONTENIDO */
+        .main-content {
+            width: 90%;
+            max-width: 1250px;
+            margin: auto;
+            padding: 60px 0 75px;
+        }
+
+        .section-heading {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 12px;
+            color: #f3cf75;
+            font-size: clamp(27px, 4vw, 38px);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: #bfc1c8;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .gold-line {
+            width: 75px;
+            height: 3px;
+            margin: 18px auto;
+            background: #d6b35d;
+        }
+
+        /* TARJETAS */
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .movie-card {
+            overflow: hidden;
+            position: relative;
+            min-width: 0;
+            border: 1px solid #34343b;
+            border-radius: 10px;
+            background: #15161c;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            border-color: #d6b35d;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55);
+        }
+
+        .movie-card a {
+            display: block;
+            height: 100%;
+            color: #fff;
+        }
+
+        .movie-card img {
+            display: block;
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            object-position: center;
+            background: #25252b;
+            transition: transform 0.5s;
+        }
+
+        .movie-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-image {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: "";
+            position: absolute;
+            inset: 45% 0 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+            pointer-events: none;
+        }
+
+        .card-info {
+            padding: 22px 20px 24px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            margin: 0 0 10px;
+            color: #f3cf75;
+            font-size: 23px;
+        }
+
+        .card-info p {
+            min-height: 48px;
+            margin: 0;
+            color: #c5c6cc;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .card-link {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 9px 17px;
+            border: 1px solid #b99849;
+            border-radius: 4px;
+            color: #f3cf75;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .movie-card:hover .card-link {
+            background: #d6b35d;
+            color: #101010;
+        }
+
+        /* TARJETA DE ANIMACIÓN */
+        .animated-card {
+            border: 2px solid #d6b35d;
+            background: linear-gradient(145deg, #201b10, #15161c 70%);
+        }
+
+        .animated-card .card-info h3 {
+            color: #ffda79;
+        }
+
+        .animated-card .card-link {
+            background: #d6b35d;
+            color: #111;
+        }
+
+        /* PIE DE PÁGINA */
+        #footer {
+            padding: 28px 20px;
+            border-top: 2px solid #c9a44c;
+            background: #050609;
+            text-align: center;
+        }
+
+        #footer p {
+            margin: 0;
+            color: #a9a9af;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        #footer strong {
+            color: #e4bf68;
+        }
+
+        /* RESPONSIVE */
+        @media screen and (max-width: 900px) {
+            .movies-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+            }
+
+            .movie-card img {
+                height: 230px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #logo {
+                font-size: 21px;
+            }
+
+            #nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 350px;
+                padding: 55px 18px;
+            }
+
+            .hero .eyebrow {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .main-content {
+                width: 92%;
+                padding: 45px 0;
+            }
+
+            .movies-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .movie-card img {
+                height: 250px;
+            }
+
+            .card-info p {
+                min-height: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="proyect.html" id="logo">Historia del Cine</a>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="proyect.html" class="active">Inicio</a></li>
+                    <li><a href="#decadas">Décadas</a></li>
+                    <li><a href="animadas.html">Animadas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PORTADA -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">Un viaje por la historia del séptimo arte</p>
+
+            <h1>HISTORIA <span>DEL CINE</span></h1>
+
+            <p>
+                Descubre las películas que marcaron generaciones, los grandes
+                clásicos y la evolución del cine desde los años 40 hasta la actualidad.
+            </p>
+
+            <a href="#decadas" class="hero-button">EXPLORAR PELÍCULAS</a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE DÉCADAS -->
+    <main class="main-content" id="decadas">
+
+        <div class="section-heading">
+            <h2>Explora por décadas</h2>
+            <div class="gold-line"></div>
+            <p>
+                Cada época tiene historias inolvidables. Elige una década y descubre
+                sus películas más representativas.
+            </p>
+        </div>
+
+        <div class="movies-grid">
+
+            <!-- AÑOS 40 -->
+            <article class="movie-card">
+                <a href="40s.html">
+                    <div class="card-image">
+                        <img src="images/cine40.jpg" alt="Películas clásicas de los años 40">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 40</h3>
+                        <p>La época dorada de Hollywood y los grandes clásicos en blanco y negro.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- AÑOS 50 -->
+            <article class="movie-card">
+                <a href="threecolumn.html">
+                    <div class="card-image">
+                        <img src="images/cine50.jpg" alt="Películas clásicas de los años 50">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 50</h3>
+                        <p>Grandes dramas, estrellas legendarias y películas inolvidables.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- AÑOS 60 -->
+            <article class="movie-card">
+                <a href="60s.html">
+                    <div class="card-image">
+                        <img src="images/cine60.jpg" alt="Películas de los años 60">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 60</h3>
+                        <p>Nuevos estilos, directores innovadores y cambios en el cine mundial.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- AÑOS 70 -->
+            <article class="movie-card">
+                <a href="70s.html">
+                    <div class="card-image">
+                        <img src="images/cine70.jpg" alt="Películas de los años 70">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 70</h3>
+                        <p>Historias arriesgadas y películas que transformaron Hollywood.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- AÑOS 80 -->
+            <article class="movie-card">
+                <a href="80s.html">
+                    <div class="card-image">
+                        <img src="images/cine80.jpg" alt="Películas de los años 80">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 80</h3>
+                        <p>Aventuras, ciencia ficción y éxitos que se convirtieron en clásicos.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- AÑOS 90 -->
+            <article class="movie-card">
+                <a href="90s.html">
+                    <div class="card-image">
+                        <img src="images/cine90.jpg" alt="Películas de los años 90">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 90</h3>
+                        <p>Grandes estrenos, nuevas tecnologías y cine para toda una generación.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- AÑOS 2000 -->
+            <article class="movie-card">
+                <a href="2000s.html">
+                    <div class="card-image">
+                        <img src="images/cine2000.jpg" alt="Películas de los años 2000">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 2000</h3>
+                        <p>Franquicias famosas, fantasía épica y el crecimiento del cine digital.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- AÑOS 2010 -->
+            <article class="movie-card">
+                <a href="2010s.html">
+                    <div class="card-image">
+                        <img src="images/cine2010.jpg" alt="Películas de los años 2010">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 2010</h3>
+                        <p>Superhéroes, animación avanzada y películas reconocidas mundialmente.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- AÑOS 2020 -->
+            <article class="movie-card">
+                <a href="2020s.html">
+                    <div class="card-image">
+                        <img src="images/cine2020.jpg" alt="Películas de los años 2020">
+                    </div>
+                    <div class="card-info">
+                        <h3>Años 2020</h3>
+                        <p>Las tendencias actuales y las nuevas propuestas del cine moderno.</p>
+                        <span class="card-link">Ver películas</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- PELÍCULAS ANIMADAS -->
+            <article class="movie-card animated-card">
+                <a href="animadas.html">
+                    <div class="card-image">
+                        <img src="images/a.jpg" alt="Sección de películas animadas">
+                    </div>
+                    <div class="card-info">
+                        <h3>Películas animadas</h3>
+                        <p>Desde clásicos de animación hasta grandes historias como Shrek y El príncipe de Egipto.</p>
+                        <span class="card-link">Ver animadas</span>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="footer">
+        <p><strong>HISTORIA DEL CINE</strong></p>
+        <p>Un recorrido por las películas que hicieron historia.</p>
+    </footer>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,679 @@
+
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 50</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+            background-color: #101010;
+        }
+
+        #header {
+            background: #171717;
+        }
+
+        #logo {
+            color: #f0c66b !important;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #content {
+            background: #151515;
+            color: #eeeeee;
+            padding: 35px 0;
+        }
+
+        #content h2,
+        #content h3,
+        #content h4 {
+            color: #f0c66b;
+        }
+
+        #content p,
+        #content li {
+            color: #dddddd;
+            line-height: 1.7;
+        }
+
+        .presentacion {
+            text-align: center;
+            padding: 30px 15px;
+            margin-bottom: 30px;
+            background: linear-gradient(
+                135deg,
+                #292018,
+                #111111,
+                #302319
+            );
+            border: 1px solid #72572f;
+            border-radius: 8px;
+        }
+
+        .presentacion h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .presentacion p {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            color: #f0c66b;
+            border: 1px solid #f0c66b;
+            padding: 6px 13px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-size: 0.8em;
+        }
+
+        .peliculas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            margin: 25px 0 50px;
+        }
+
+        .pelicula {
+            background: #222222;
+            border: 1px solid #45403a;
+            border-radius: 7px;
+            overflow: hidden;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        .poster {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: #302a24;
+        }
+
+        .poster img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s;
+        }
+
+        .pelicula:hover .poster img {
+            transform: scale(1.04);
+        }
+
+        .pelicula-info {
+            padding: 15px;
+        }
+
+        .pelicula-info h3 {
+            font-size: 1.05em;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .genero {
+            display: inline-block;
+            color: #ffffff;
+            background: #493a26;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            margin: 5px 0 10px;
+        }
+
+        .pelicula-info p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .seccion-titulo {
+            border-bottom: 2px solid #8b6a35;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .introduccion {
+            margin-bottom: 35px;
+        }
+
+        .oscar-lista {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .oscar-lista li {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #222222;
+            border-left: 4px solid #c9a04f;
+            border-radius: 4px;
+        }
+
+        .oscar-anio {
+            min-width: 75px;
+            color: #f0c66b;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        .oscar-lista strong {
+            color: #ffffff;
+        }
+
+        .nota {
+            font-size: 0.9em;
+            color: #bbbbbb;
+            font-style: italic;
+        }
+
+        .bloque-extra {
+            background: #222222;
+            border: 1px solid #45403a;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+        }
+
+        .bloque-extra ul {
+            padding-left: 20px;
+        }
+
+        #footer {
+            background: #101010;
+            color: #cccccc;
+            padding: 25px 0;
+        }
+
+        #footer p {
+            text-align: center;
+        }
+
+        #copyright {
+            background: #080808;
+            color: #aaaaaa;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .peliculas-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 18px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .peliculas-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .pelicula-info {
+                padding: 10px;
+            }
+
+            .pelicula-info h3 {
+                font-size: 0.95em;
+            }
+
+            .presentacion h2 {
+                font-size: 1.6em;
+            }
+
+            .oscar-lista li {
+                gap: 10px;
+                padding: 12px;
+            }
+
+            .oscar-anio {
+                min-width: 65px;
+            }
+        }
+    </style>
+</head>
+
+<body class="subpage">
+
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Cine Clásico
+                        </a>
+                    </h1>
+
+                    <!-- BOTÓN INICIO -->
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                        <a href="threecolumn.html">Cine de los 50</a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO -->
+    <section id="content">
+        <div class="container">
+
+            <div class="presentacion">
+                <span class="etiqueta">LA EDAD DE ORO DEL CINE</span>
+
+                <h2>Las Grandes Películas de los Años 50</h2>
+
+                <p>
+                    La década de 1950 dejó algunas de las obras más
+                    influyentes de la historia del cine. El drama,
+                    el suspense, la comedia, el cine japonés y los
+                    grandes musicales demostraron que una película
+                    podía entretener y explorar las emociones y los
+                    problemas de la sociedad.
+                </p>
+            </div>
+
+            <section class="introduccion">
+                <h2 class="seccion-titulo">
+                    10 películas imprescindibles
+                </h2>
+
+                <p>
+                    Descubre diez clásicos de diferentes estilos.
+                    Cada tarjeta incluye el espacio para el póster,
+                    el año de estreno, el género y una explicación
+                    de su importancia.
+                </p>
+            </section>
+
+            <!-- CUADRÍCULA DE PELÍCULAS -->
+            <div class="peliculas-grid">
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula1">
+                        <img src="images/sunset-boulevard.jpg"
+                             alt="Póster de Sunset Boulevard"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula1">
+                        <span class="anio">1950</span>
+                        <h3>Sunset Boulevard</h3>
+                        <span class="genero">Drama / Cine negro</span>
+                        <p>
+                            Billy Wilder retrata el lado oscuro de
+                            Hollywood a través de una antigua estrella
+                            del cine mudo que sueña con regresar a la fama.
+                            Destaca por su guion y su crítica a la industria.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula2">
+                        <img src="images/all-about-eve.jpg"
+                             alt="Póster de All About Eve"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula2">
+                        <span class="anio">1950</span>
+                        <h3>All About Eve</h3>
+                        <span class="genero">Drama</span>
+                        <p>
+                            Una joven admiradora se acerca a una actriz
+                            consagrada y comienza una lucha por el éxito.
+                            Es una historia sobre la ambición, la fama
+                            y los celos.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula3">
+                        <img src="images/rashomon.jpg"
+                             alt="Póster de Rashomon"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula3">
+                        <span class="anio">1950</span>
+                        <h3>Rashomon</h3>
+                        <span class="genero">Drama / Misterio</span>
+                        <p>
+                            Akira Kurosawa presenta distintas versiones
+                            de un mismo crimen. La película cuestiona
+                            la verdad y la memoria, y ayudó a dar a conocer
+                            el cine japonés internacionalmente.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula4">
+                        <img src="images/singin-in-the-rain.jpg"
+                             alt="Póster de Singin' in the Rain"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula4">
+                        <span class="anio">1952</span>
+                        <h3>Singin' in the Rain</h3>
+                        <span class="genero">Musical / Comedia</span>
+                        <p>
+                            Una comedia musical sobre Hollywood durante
+                            la transición del cine mudo al sonoro.
+                            Sus canciones, coreografías y humor la
+                            convirtieron en un clásico del género.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula5">
+                        <img src="images/high-noon.jpg"
+                             alt="Póster de High Noon"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula5">
+                        <span class="anio">1952</span>
+                        <h3>High Noon</h3>
+                        <span class="genero">Western / Drama</span>
+                        <p>
+                            Un sheriff debe enfrentarse a unos pistoleros
+                            mientras descubre quién está dispuesto a
+                            ayudarlo. Su tensión narrativa renovó el
+                            western tradicional.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula6">
+                        <img src="images/roman-holiday.jpg"
+                             alt="Póster de Roman Holiday"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula6">
+                        <span class="anio">1953</span>
+                        <h3>Roman Holiday</h3>
+                        <span class="genero">Romance / Comedia</span>
+                        <p>
+                            Una princesa escapa de sus obligaciones
+                            durante un día en Roma y conoce a un periodista.
+                            Audrey Hepburn ganó el Óscar a mejor actriz
+                            por su interpretación.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula7">
+                        <img src="images/tokyo-story.jpg"
+                             alt="Póster de Tokyo Story"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula7">
+                        <span class="anio">1953</span>
+                        <h3>Tokyo Story</h3>
+                        <span class="genero">Drama</span>
+                        <p>
+                            Yasujiro Ozu cuenta la visita de una pareja
+                            de ancianos a sus hijos en Tokio. Reflexiona
+                            sobre la familia, el paso del tiempo
+                            y la soledad.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula8">
+                        <img src="images/rear-window.jpg"
+                             alt="Póster de Rear Window"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula8">
+                        <span class="anio">1954</span>
+                        <h3>Rear Window</h3>
+                        <span class="genero">Suspense / Misterio</span>
+                        <p>
+                            Alfred Hitchcock crea una historia de suspense
+                            sobre un fotógrafo que sospecha que su vecino
+                            ha cometido un asesinato. Destaca por su tensión
+                            y su uso del punto de vista.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula9">
+                        <img src="images/seven-samurai.jpg"
+                             alt="Póster de Seven Samurai"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula9">
+                        <span class="anio">1954</span>
+                        <h3>Seven Samurai</h3>
+                        <span class="genero">Acción / Aventura</span>
+                        <p>
+                            Siete samuráis defienden una aldea de los
+                            bandidos. Su montaje, personajes y escenas
+                            de acción influyeron profundamente en el
+                            cine de aventuras posterior.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <a class="poster" href="#pelicula10">
+                        <img src="images/twelve-angry-men.jpg"
+                             alt="Póster de 12 Angry Men"
+                             loading="lazy">
+                    </a>
+                    <div class="pelicula-info" id="pelicula10">
+                        <span class="anio">1957</span>
+                        <h3>12 Angry Men</h3>
+                        <span class="genero">Drama judicial</span>
+                        <p>
+                            Doce miembros de un jurado deliberan sobre
+                            un caso de asesinato. La película examina
+                            los prejuicios, la justicia y la importancia
+                            de la duda razonable.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- GANADORAS DEL ÓSCAR -->
+            <section>
+                <h2 class="seccion-titulo">
+                    Ganadoras del Óscar a mejor película
+                </h2>
+
+                <p>
+                    Estas películas se estrenaron entre 1950 y 1959.
+                    El año indicado es el de estreno y se señala
+                    también el año de la ceremonia del Óscar.
+                </p>
+
+                <ul class="oscar-lista">
+                    <li>
+                        <span class="oscar-anio">1950</span>
+                        <div>
+                            <strong>All About Eve</strong>
+                            <p>Óscar entregado en 1951. Drama sobre la ambición en el teatro.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1951</span>
+                        <div>
+                            <strong>An American in Paris</strong>
+                            <p>Óscar entregado en 1952. Musical romántico ambientado en París.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1952</span>
+                        <div>
+                            <strong>The Greatest Show on Earth</strong>
+                            <p>Óscar entregado en 1953. Drama ambientado en el mundo del circo.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1953</span>
+                        <div>
+                            <strong>From Here to Eternity</strong>
+                            <p>Óscar entregado en 1954. Drama sobre soldados en Hawái antes de Pearl Harbor.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1954</span>
+                        <div>
+                            <strong>On the Waterfront</strong>
+                            <p>Óscar entregado en 1955. Drama sobre la corrupción sindical en los muelles.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1955</span>
+                        <div>
+                            <strong>Marty</strong>
+                            <p>Óscar entregado en 1956. Drama sobre un hombre soltero que busca amor.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1956</span>
+                        <div>
+                            <strong>Around the World in 80 Days</strong>
+                            <p>Óscar entregado en 1957. Aventura basada en la novela de Julio Verne.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1957</span>
+                        <div>
+                            <strong>The Bridge on the River Kwai</strong>
+                            <p>Óscar entregado en 1958. Drama bélico sobre prisioneros de guerra.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1958</span>
+                        <div>
+                            <strong>Gigi</strong>
+                            <p>Óscar entregado en 1959. Musical romántico ambientado en París.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="oscar-anio">1959</span>
+                        <div>
+                            <strong>Ben-Hur</strong>
+                            <p>Óscar entregado en 1960. Épica histórica famosa por su carrera de cuadrigas.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <p class="nota">
+                    Nota: se indica el año de estreno de cada película;
+                    el año del Óscar aparece en la descripción.
+                </p>
+            </section>
+
+            <!-- IMPORTANCIA DEL CINE DE LOS 50 -->
+            <div class="row">
+
+                <div class="col-6 col-12-medium">
+                    <section class="bloque-extra">
+                        <h3>¿Qué hizo especial a esta década?</h3>
+                        <ul>
+                            <li>Avances en el color y el formato panorámico.</li>
+                            <li>Historias complejas sobre la sociedad y la moral.</li>
+                            <li>Directores como Hitchcock y Kurosawa.</li>
+                            <li>Musicales, westerns y dramas influyentes.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="col-6 col-12-medium">
+                    <section class="bloque-extra">
+                        <h3>¿Por dónde empezar?</h3>
+                        <p>
+                            Para el suspense, elige <em>Rear Window</em>.
+                            Para un drama humano, prueba <em>12 Angry Men</em>.
+                            Si prefieres el espectáculo, mira
+                            <em>Singin' in the Rain</em>; para descubrir
+                            el cine japonés, comienza con <em>Seven Samurai</em>.
+                        </p>
+                    </section>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Cine Clásico | Un recorrido por las grandes
+                        películas de los años 50.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="copyright">
+        &copy; Cine Clásico. Página educativa.
+        Diseño basado en Halcyonic de HTML5 UP.
+    </div>
+
+</div>
+
+<!-- SCRIPTS DE LA PLANTILLA -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

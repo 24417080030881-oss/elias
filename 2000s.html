@@ -1,0 +1,520 @@
+
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 2000</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+            background-color: #101010;
+            color: #eeeeee;
+        }
+
+        #header {
+            background-color: #181818;
+            border-bottom: 2px solid #f0c66b;
+        }
+
+        #logo {
+            color: #f0c66b;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #nav a:hover,
+        #nav a.current {
+            color: #f0c66b;
+        }
+
+        #main {
+            background-color: #101010;
+            padding: 35px 0;
+        }
+
+        h1, h2, h3 {
+            color: #f0c66b;
+        }
+
+        p {
+            color: #dddddd;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* GALERÍA DE PELÍCULAS */
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .pelicula {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            min-width: 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        .pelicula img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #292929;
+        }
+
+        .pelicula h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .pelicula p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .pelicula strong {
+            color: #f0c66b;
+        }
+
+        /* LISTA DE LOS ÓSCAR */
+
+        .oscar {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .oscar h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .oscar > p {
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .oscar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .oscar li {
+            padding: 12px 10px;
+            border-bottom: 1px solid #383838;
+            line-height: 1.6;
+        }
+
+        .oscar li:last-child {
+            border-bottom: none;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+        }
+
+        /* PIE DE PÁGINA */
+
+        #footer {
+            background-color: #181818;
+            border-top: 2px solid #f0c66b;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        #footer p {
+            margin: 0;
+        }
+
+        /* TABLET */
+
+        @media screen and (max-width: 980px) {
+            .peliculas {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* CELULAR */
+
+        @media screen and (max-width: 736px) {
+            #main {
+                padding: 25px 0;
+            }
+
+            .peliculas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .pelicula {
+                padding: 10px;
+            }
+
+            .pelicula h3 {
+                font-size: 15px;
+            }
+
+            .pelicula p {
+                font-size: 12px;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
+
+            .oscar {
+                padding: 18px;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            .peliculas {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Grandes Películas de los Años 2000
+                        </a>
+                    </h1>
+
+                    <!-- MENÚ DE NAVEGACIÓN -->
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="main">
+        <div class="container">
+
+            <!-- INTRODUCCIÓN -->
+            <div class="intro">
+                <h2>El mejor cine de los años 2000</h2>
+
+                <p>
+                    La década de los 2000 transformó la industria
+                    cinematográfica con grandes sagas, animación digital,
+                    aventuras fantásticas y nuevas tecnologías visuales.
+                    Directores de todo el mundo crearon películas que
+                    conquistaron al público y dejaron una huella duradera
+                    en la historia del cine.
+                </p>
+            </div>
+
+            <!-- GALERÍA DE 10 PELÍCULAS -->
+            <div class="peliculas">
+
+                <!-- 1 -->
+                <article class="pelicula">
+                    <img src="images4/gladiator.jpg"
+                         alt="Cartel de Gladiator"
+                         loading="lazy">
+
+                    <h3>Gladiator</h3>
+                    <p><strong>Año:</strong> 2000</p>
+                    <p><strong>Director:</strong> Ridley Scott</p>
+                    <p><strong>Género:</strong> Acción y drama histórico</p>
+                <p>What we do in life echoes in eternity</p>
+                    <p>
+                       Tras la muerte del emperador Marco Aurelio, su astuto hijo toma el poder y degrada a Máximo, uno de los generales más capaces de Roma, a quien Marco Aurelio prefería. Finalmente, Máximo se ve obligado a convertirse en gladiador y luchar a muerte contra otros hombres para el entretenimiento de un público que paga por verlo.
+                    </p>
+                </article>
+
+                <!-- 2 -->
+                <article class="pelicula">
+                    <img src="images4/lord-of-the-rings-fellowship.jpg"
+                         alt="Cartel de El señor de los anillos: La comunidad del anillo"
+                         loading="lazy">
+
+                    <h3>El señor de los anillos: La comunidad del anillo</h3>
+                    <p><strong>Año:</strong> 2001</p>
+                    <p><strong>Director:</strong> Peter Jackson</p>
+                    <p><strong>Género:</strong> Fantasía y aventura</p>
+                    <p>one ring to rule them all</p>
+                    <p>
+                      El joven hobbit Frodo Bolsón, tras heredar un misterioso anillo de su tío Bilbo, debe abandonar su hogar para evitar que caiga en manos de su malvado creador. En el camino, se forma una compañía para proteger al portador del anillo y asegurarse de que llegue a su destino final: el Monte del Destino, el único lugar donde puede ser destruido.                    </p>
+                </article>
+
+                <!-- 3 -->
+                <article class="pelicula">
+                    <img src="images4/rfad.jpg"
+                         alt="Requiem for  dream"
+                         loading="lazy">
+
+                    <h3>Requiem for a dream</h3>
+                    <p><strong>Año:</strong> 2000</p>
+                    <p><strong>Director:</strong> Darren Aronofsky</p>
+                    <p><strong>Género:</strong>drama y horor</p>
+                    <p>
+                      Las utopías creadas por las drogas de cuatro residentes de Coney Island se desmoronan cuando sus adicciones se vuelven profundas
+                    </p>
+                </article>
+
+                <!-- 4 -->
+                <article class="pelicula">
+                    <img src="images4/city-of-god.jpg"
+                         alt="Cartel de Ciudad de Dios"
+                         loading="lazy">
+
+                    <h3>Ciudad de Dios</h3>
+                    <p><strong>Año:</strong> 2002</p>
+                    <p><strong>Directores:</strong> Fernando Meirelles y Kátia Lund</p>
+                    <p><strong>Género:</strong> Crimen y drama</p>
+                    <p>If you run, the beast catches you; if you stay, the beast eats you.</p>
+                    <p>
+                      En las favelas empobrecidas de Río de Janeiro en la década de 1970, dos jóvenes eligen caminos diferentes. Rocket es un fotógrafo en ciernes que documenta la creciente violencia relacionada con el narcotráfico en su barrio, mientras que José “Zé” Pequeno es un ambicioso narcotraficante que se adentra en una peligrosa vida delictiva.                    </p>
+                </article>
+
+                <!-- 5 -->
+                <article class="pelicula">
+                    <img src="images4/mr.jpg"
+                         alt="Cartel de Lost in Translation"
+                         loading="lazy">
+
+                    <h3>Mystic river</h3>
+                    <p><strong>Año:</strong> 2003</p>
+                    <p><strong>Directora:</strong>Clint eastwood</p>
+                    <p><strong>Género:</strong> Drama</p>
+                    <p>We bury our sins, we wash them clean.</p>
+                    <p>
+                        La vida de tres hombres que eran amigos desde la infancia se ve destrozada cuando uno de ellos sufre una tragedia familiar.
+                    </p>
+                </article>
+
+                <!-- 6 -->
+                <article class="pelicula">
+                    <img src="images4/ap.jpg"
+                         alt="Cartel de Los increíbles"
+                         loading="lazy">
+
+                    <h3>Amores perros</h3>
+                    <p><strong>Año:</strong> 2000</p>
+                    <p><strong>Director:</strong>Alejandro Gonzalez Iñarritu</p>
+                    <p><strong>Género:</strong>drama , mexico</p>
+                    <p>amor , traicion, muerte</p>
+                    <p>
+                        Un fatal accidente automovilístico en la Ciudad de México desencadena una serie de acontecimientos en la vida de tres personas: una supermodelo, un joven que quiere fugarse con su cuñada y un hombre sin hogar.
+                    </p>
+                </article>
+
+                <!-- 7 -->
+                <article class="pelicula">
+                    <img src="images4/com.jpg"
+                         alt="Cartel de Batman Begins"
+                         loading="lazy">
+
+                    <h3>Children Of Men </h3>
+                    <p><strong>Año:</strong> 2006</p>
+                    <p><strong>Director:</strong>alfonso cuaron</p>
+                    <p><strong>Género:</strong> Acción y drama</p>
+                    <p>
+                  El año 2027: los últimos días de la raza humana. No ha nacido ningún niño en 18 años. Debe proteger nuestra única esperanza.
+En 2027, en un mundo caótico en el que los humanos ya no pueden procrear, un antiguo activista acepta ayudar a transportar a una mujer milagrosamente embarazada a un santuario en el mar, donde el nacimiento de su hijo podría ayudar a los científicos a salvar el futuro de la humanidad.
+                    </p>
+                </article>
+
+                <!-- 8 -->
+                <article class="pelicula">
+                    <img src="images4/bsg.jpg"
+                         alt="Cartel de Los infiltrados"
+                         loading="lazy">
+
+                    <h3>Bastardos Sin Gloria</h3>
+                    <p><strong>Año:</strong> 2009</p>
+                    <p><strong>Director:</strong>quentin  tarantino</p>
+                    <p><strong>Género:</strong> drama y comedia</p>
+                    <p>Once upon a time in Nazi occupied France…</p>
+                    <p>
+                        En la Francia ocupada por los nazis durante la Segunda Guerra Mundial, un grupo de soldados judeoamericanos conocidos como «Los Bastardos» son elegidos específicamente para sembrar el terror en todo el Tercer Reich arrancando cabelleras y asesinando brutalmente a nazis. Los Bastardos, liderados por el teniente Aldo Raine, pronto se cruzan con una adolescente judía francesa que regenta un cine en París, el cual se convierte en objetivo de los soldados.                    </p>
+                </article>
+
+                <!-- 9 -->
+                <article class="pelicula">
+                    <img src="images4/no-country-for-old-men.jpg"
+                         alt="Cartel de Sin lugar para los débiles"
+                         loading="lazy">
+
+                    <h3>Sin lugar para los débiles</h3>
+                    <p><strong>Año:</strong> 2007</p>
+                    <p><strong>Directores:</strong> Joel y Ethan Coen</p>
+                    <p><strong>Género:</strong> Suspenso y crimen</p>
+                    <p>There are no clean getaways</p>
+                    
+                    <p>
+                       Llewelyn Moss descubre cadáveres, dos millones de dólares y un alijo de heroína en un desierto de Texas, pero el metódico asesino Anton Chigurh va tras ellos, con el sheriff local Ed Tom Bell pisándole los talones. Los papeles de presa y depredador se desdibujan a medida que la violenta búsqueda de dinero y justicia chocan.
+
+
+                    </p>
+                </article>
+
+                <!-- 10 -->
+                <article class="pelicula">
+                    <img src="images4/the-dark-knight.jpg"
+                         alt="Cartel de El caballero de la noche"
+                         loading="lazy">
+
+                    <h3>El caballero de la noche</h3>
+                    <p><strong>Año:</strong> 2008</p>
+                    <p><strong>Director:</strong> Christopher Nolan</p>
+                    <p><strong>Género:</strong> Acción y crimen</p>
+                    <p>Welcome to world without rules</p>
+                    <p>
+                       Batman sube la apuesta en su guerra contra el crimen. Con la ayuda del teniente Jim Gordon y el fiscal de distrito Harvey Dent, Batman se propone desmantelar las organizaciones criminales que aún asolan las calles. La alianza resulta eficaz, pero pronto se ven envueltos en el caos desatado por un genio criminal en ascenso, conocido por los aterrorizados ciudadanos de Gotham como el Joker.
+                    </p>
+                </article>
+
+            </div>
+
+            <!-- GANADORAS DEL ÓSCAR -->
+            <section class="oscar">
+                <h2>Ganadoras del Óscar a Mejor Película</h2>
+
+                <p>
+                    La siguiente lista está organizada por año de estreno.
+                    Entre paréntesis se indica el año de la ceremonia
+                    en que cada película recibió el premio.
+                </p>
+
+                <ul>
+                    <li>
+                        <span class="anio">2000:</span>
+                        <em>Gladiator</em> — Óscar de 2001.
+                    </li>
+
+                    <li>
+                        <span class="anio">2001:</span>
+                        <em>A Beautiful Mind</em> — Una mente brillante,
+                        Óscar de 2002.
+                    </li>
+
+                    <li>
+                        <span class="anio">2002:</span>
+                        <em>Chicago</em> — Óscar de 2003.
+                    </li>
+
+                    <li>
+                        <span class="anio">2003:</span>
+                        <em>The Lord of the Rings: The Return of the King</em>
+                        — El retorno del rey, Óscar de 2004.
+                    </li>
+
+                    <li>
+                        <span class="anio">2004:</span>
+                        <em>Million Dollar Baby</em> — Golpes del destino,
+                        Óscar de 2005.
+                    </li>
+
+                    <li>
+                        <span class="anio">2005:</span>
+                        <em>Crash</em> — Alto impacto, Óscar de 2006.
+                    </li>
+
+                    <li>
+                        <span class="anio">2006:</span>
+                        <em>The Departed</em> — Los infiltrados,
+                        Óscar de 2007.
+                    </li>
+
+                    <li>
+                        <span class="anio">2007:</span>
+                        <em>No Country for Old Men</em> — Sin lugar para
+                        los débiles, Óscar de 2008.
+                    </li>
+
+                    <li>
+                        <span class="anio">2008:</span>
+                        <em>Slumdog Millionaire</em> — ¿Quién quiere ser
+                        millonario?, Óscar de 2009.
+                    </li>
+
+                    <li>
+                        <span class="anio">2009:</span>
+                        <em>The Hurt Locker</em> — Vivir al límite,
+                        Óscar de 2010.
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <div id="footer">
+        <div class="container">
+            <p>
+                Cine Clásico | Historia del cine
+            </p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE LA PLANTILLA -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,538 @@
+
+```html
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Grandes Películas de los Años 2010</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+            background-color: #101010;
+            color: #eeeeee;
+        }
+
+        #header {
+            background-color: #181818;
+            border-bottom: 2px solid #f0c66b;
+        }
+
+        #logo {
+            color: #f0c66b;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #nav a:hover,
+        #nav a.current {
+            color: #f0c66b;
+        }
+
+        #main {
+            background-color: #101010;
+            padding: 35px 0;
+        }
+
+        h1, h2, h3 {
+            color: #f0c66b;
+        }
+
+        p {
+            color: #dddddd;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* GALERÍA DE PELÍCULAS */
+
+        .peliculas {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .pelicula {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            min-width: 0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .pelicula:hover {
+            transform: translateY(-5px);
+            border-color: #f0c66b;
+        }
+
+        .pelicula img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            background-color: #292929;
+        }
+
+        .pelicula h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .pelicula p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .pelicula strong {
+            color: #f0c66b;
+        }
+
+        .frase {
+            color: #f0c66b !important;
+            font-style: italic;
+        }
+
+        /* LISTA DE LOS ÓSCAR */
+
+        .oscar {
+            background-color: #1b1b1b;
+            border: 1px solid #383838;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .oscar h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .oscar > p {
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .oscar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .oscar li {
+            padding: 12px 10px;
+            border-bottom: 1px solid #383838;
+            line-height: 1.6;
+        }
+
+        .oscar li:last-child {
+            border-bottom: none;
+        }
+
+        .anio {
+            color: #f0c66b;
+            font-weight: bold;
+        }
+
+        /* PIE DE PÁGINA */
+
+        #footer {
+            background-color: #181818;
+            border-top: 2px solid #f0c66b;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        #footer p {
+            margin: 0;
+        }
+
+        /* TABLET */
+
+        @media screen and (max-width: 980px) {
+            .peliculas {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 20px;
+            }
+        }
+
+        /* CELULAR */
+
+        @media screen and (max-width: 736px) {
+            #main {
+                padding: 25px 0;
+            }
+
+            .peliculas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .pelicula {
+                padding: 10px;
+            }
+
+            .pelicula h3 {
+                font-size: 15px;
+            }
+
+            .pelicula p {
+                font-size: 12px;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
+
+            .oscar {
+                padding: 18px;
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            .peliculas {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div id="page-wrapper">
+
+    <!-- ENCABEZADO -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <h1>
+                        <a href="index.html" id="logo">
+                            Grandes Películas de los Años 2010
+                        </a>
+                    </h1>
+
+                    <!-- MENÚ DE NAVEGACIÓN -->
+                    <nav id="nav">
+                        <a href="index.html">Inicio</a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div id="main">
+        <div class="container">
+
+            <!-- INTRODUCCIÓN -->
+            <div class="intro">
+                <h2>El mejor cine de los años 2010</h2>
+
+                <p>
+                    La década de 2010 destacó por los superhéroes, la ciencia
+                    ficción, el cine independiente y las grandes producciones.
+                    El avance de los efectos visuales y las historias de todo
+                    el mundo dieron lugar a películas que marcaron a una
+                    generación y dejaron una huella en la historia del cine.
+                </p>
+            </div>
+
+            <!-- GALERÍA DE 10 PELÍCULAS -->
+            <div class="peliculas">
+
+                <!-- 1 -->
+                <article class="pelicula">
+                    <img src="images4/w.jpg"
+                         alt="Cartel de Inception"
+                         loading="lazy">
+
+                    <h3>The Wolf of Wall Street</h3>
+                    <p><strong>Año:</strong> 2013</p>
+                    <p><strong>Director:</strong>Martin scorssece</p>
+                    <p><strong>Género:</strong>Drama y comedia</p>
+                    <p class="frase">.</p>
+                    <p>earn spend party</p>
+                    <p>
+                    Un corredor de bolsa neoyorquino se niega a cooperar en un caso de fraude bursátil de gran envergadura que involucra corrupción en Wall Street, el mundo de la banca corporativa e infiltración de la mafia. Basada en la autobiografía de Jordan Belfort.
+                    </p>
+                </article>
+
+                <!-- 2 -->
+                <article class="pelicula">
+                    <img src="images4/the-social-network.jpg"
+                         alt="Cartel de The Social Network"
+                         loading="lazy">
+
+                    <h3>The Social Network</h3>
+                    <p><strong>Año:</strong> 2010</p>
+                    <p><strong>Director:</strong> David Fincher</p>
+                    <p><strong>Género:</strong> Drama biográfico</p>
+                    <p class="frase">You don't get to 500 million friends without making a few enemies.</p>
+                    <p>
+                        En 2003, Mark Zuckerberg, estudiante de Harvard y programador informático, comenzó a trabajar en un nuevo concepto que con el tiempo se convertiría en la red social global conocida como Facebook. Seis años después, Mark era uno de los multimillonarios más jóvenes de la historia, pero su éxito sin precedentes le acarreó complicaciones personales y legales al verse envuelto en dos demandas, una de ellas contra un antiguo amigo.                    </p>
+                </article>
+
+                <!-- 3 -->
+                <article class="pelicula">
+                    <img src="images4/tsow.jpg"
+                         alt="Cartel de The Avengers"
+                         loading="lazy">
+
+                    <h3>The Shape of water</h3>
+                    <p><strong>Año:</strong> 2017</p>
+                    <p><strong>Director:</strong>guillermo del toro</p>
+                    <p><strong>Género:</strong> Romantica y ciencia ficción</p>
+                    <p class="frase">A fairy tale for troubled times.</p>
+                    <p>
+                        Una historia de otro mundo, ambientada en los Estados Unidos de la Guerra Fría alrededor de 1962, donde un conserje mudo que trabaja en un laboratorio se enamora de un hombre anfibio que está cautivo allí y elabora un plan para ayudarlo a escapar.
+                    </p>
+                </article>
+
+                <!-- 4 -->
+                <article class="pelicula">
+                    <img src="images4/gravity.jpg"
+                         alt="Cartel de Gravity"
+                         loading="lazy">
+
+                    <h3>Gravity</h3>
+                    <p><strong>Año:</strong> 2013</p>
+                    <p><strong>Director:</strong> Alfonso Cuarón</p>
+                    <p><strong>Género:</strong> Suspenso y ciencia ficción</p>
+                    <p class="frase">Don't let go.</p>
+                    <p>
+                       La doctora Ryan Stone, ingeniera en su primera misión espacial, y Matt Kowalski, astronauta en su última expedición, tienen que sobrevivir en el espacio tras ser alcanzados por escombros durante una caminata espacial.
+                    </p>
+                </article>
+
+                <!-- 5 -->
+                <article class="pelicula">
+                    <img src="images4/dk.jpg"
+                         alt="Cartel de Interstellar"
+                         loading="lazy">
+
+                    <h3>Dunquerke</h3>
+                    <p><strong>Año:</strong> 2017</p>
+                    <p><strong>Director:</strong> Christopher Nolan</p>
+                    <p><strong>Género:</strong> belica y aventura</p>
+                    <p class="frase">When 400,000 men couldn’t get home, home came for them.</p>
+                    <p>
+                        La historia de la milagrosa evacuación de los soldados aliados de Bélgica, Gran Bretaña, Canadá y Francia, que quedaron aislados y rodeados por el ejército alemán en las playas y el puerto de Dunkerque entre el 26 de mayo y el 4 de junio de 1940 durante la Segunda Guerra Mundial.
+                    </p>
+                </article>
+
+                <!-- 6 -->
+                <article class="pelicula">
+                    <img src="images4/mad-max-fury-road.jpg"
+                         alt="Cartel de Mad Max Fury Road"
+                         loading="lazy">
+
+                    <h3>Mad Max: Fury Road</h3>
+                    <p><strong>Año:</strong> 2015</p>
+                    <p><strong>Director:</strong> George Miller</p>
+                    <p><strong>Género:</strong> Acción y aventura</p>
+                    <p class="frase">What a lovely day!</p>
+                    <p>
+                        En un desierto postapocalíptico, Max se une a Furiosa,
+                        quien intenta liberar a un grupo de mujeres de un
+                        gobernante tiránico. Juntos emprenden una peligrosa
+                        persecución por la supervivencia y la libertad.
+                    </p>
+                </article>
+
+                <!-- 7 -->
+                <article class="pelicula">
+                    <img src="images4/la-la-land.jpg"
+                         alt="Cartel de La La Land"
+                         loading="lazy">
+
+                    <h3>La La Land</h3>
+                    <p><strong>Año:</strong> 2016</p>
+                    <p><strong>Director:</strong> Damien Chazelle</p>
+                    <p><strong>Género:</strong> Musical y romance</p>
+                    <p class="frase">Here's to the fools who dream.</p>
+                    <p>
+                        Mia, una aspirante a actriz, sirve cafés con leche a estrellas de cine entre audiciones, y Sebastian, un músico de jazz, se gana la vida a duras penas tocando en fiestas en bares de mala muerte, pero a medida que aumenta el éxito, se enfrentan a decisiones que empiezan a deshilachar el frágil tejido de su relación amorosa, y los sueños que tanto se esforzaron por mantener el uno en el otro amenazan con separarlos.
+                    </p>
+                </article>
+
+                <!-- 8 -->
+                <article class="pelicula">
+                    <img src="images4/bm.jpg"
+                         alt="Cartel de Get Out"
+                         loading="lazy">
+
+                    <h3>Bird man</h3>
+                    <p><strong>Año:</strong> 2014</p>
+                    <p><strong>Director:</strong>Alejandro gonzalez Iñarritu</p>
+                    <p><strong>Género:</strong> Drama y comedia</p>
+                    <p class="frase">How did  we end up here?.</p>
+                    <p>
+                        Un actor en decadencia, conocido principalmente por su interpretación de un popular superhéroe, intenta relanzar su carrera participando en una obra de Broadway. A medida que se acerca el estreno, sus intentos por ser más altruista, reconstruir su trayectoria y reconectar con amigos y familiares resultan más difíciles de lo esperado.
+                    </p>
+                </article>
+
+                <!-- 9 -->
+                <article class="pelicula">
+                    <img src="images4/parasite.jpg"
+                         alt="Cartel de Parasite"
+                         loading="lazy">
+
+                    <h3>Parasite</h3>
+                    <p><strong>Año:</strong> 2019</p>
+                    <p><strong>Director:</strong> Bong Joon-ho</p>
+                    <p><strong>Género:</strong> Drama y suspenso</p>
+                    <p class="frase">Act like you own the place.</p>
+                    <p>
+                        Una familia de bajos recursos consigue trabajar poco
+                        a poco para una familia adinerada. Lo que comienza
+                        como una oportunidad económica se transforma en una
+                        historia llena de engaños, tensión y desigualdad social.
+                    </p>
+                </article>
+
+                <!-- 10 -->
+                <article class="pelicula">
+                    <img src="images4/joker.jpg"
+                         alt="Cartel de Joker"
+                         loading="lazy">
+
+                    <h3>Joker</h3>
+                    <p><strong>Año:</strong> 2019</p>
+                    <p><strong>Director:</strong> Todd Phillips</p>
+                    <p><strong>Género:</strong> Drama y suspenso psicológico</p>
+                    <p class="frase">Put on a happy face.</p>
+                    <p>
+                        Arthur Fleck es un hombre solitario que sueña con
+                        convertirse en comediante, pero sufre el rechazo y
+                        la indiferencia de la sociedad. Sus experiencias lo
+                        llevan por un camino oscuro hasta convertirse en el Joker.
+                    </p>
+                </article>
+
+            </div>
+
+            <!-- GANADORAS DEL ÓSCAR -->
+            <section class="oscar">
+                <h2>Ganadoras del Óscar a Mejor Película</h2>
+
+                <p>
+                    La lista está organizada por año de estreno de la película.
+                    Entre paréntesis aparece el año de la ceremonia del Óscar.
+                </p>
+
+                <ul>
+                    <li>
+                        <span class="anio">2010:</span>
+                        <em>The King's Speech</em> — El discurso del rey,
+                        Óscar de 2011.
+                    </li>
+
+                    <li>
+                        <span class="anio">2011:</span>
+                        <em>The Artist</em> — El artista,
+                        Óscar de 2012.
+                    </li>
+
+                    <li>
+                        <span class="anio">2012:</span>
+                        <em>Argo</em>,
+                        Óscar de 2013.
+                    </li>
+
+                    <li>
+                        <span class="anio">2013:</span>
+                        <em>12 Years a Slave</em> — 12 años de esclavitud,
+                        Óscar de 2014.
+                    </li>
+
+                    <li>
+                        <span class="anio">2014:</span>
+                        <em>Birdman</em>,
+                        Óscar de 2015.
+                    </li>
+
+                    <li>
+                        <span class="anio">2015:</span>
+                        <em>Spotlight</em>,
+                        Óscar de 2016.
+                    </li>
+
+                    <li>
+                        <span class="anio">2016:</span>
+                        <em>Moonlight</em>,
+                        Óscar de 2017.
+                    </li>
+
+                    <li>
+                        <span class="anio">2017:</span>
+                        <em>The Shape of Water</em> — La forma del agua,
+                        Óscar de 2018.
+                    </li>
+
+                    <li>
+                        <span class="anio">2018:</span>
+                        <em>Green Book</em> — Una amistad sin fronteras,
+                        Óscar de 2019.
+                    </li>
+
+                    <li>
+                        <span class="anio">2019:</span>
+                        <em>Parasite</em> — Parásitos,
+                        Óscar de 2020.
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <div id="footer">
+        <div class="container">
+            <p>
+                Cine Clásico | Historia del cine
+            </p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE LA PLANTILLA -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</div>
+</body>
+</html>
+```
