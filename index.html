@@ -1,12 +1,9 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia del Cine</title>
-
-    <link rel="stylesheet" href="assets/css/main.css">
 
     <style>
         * {
@@ -193,7 +190,8 @@
             border-radius: 10px;
             background: #15161c;
             box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, border-color 0.3s,
+                        box-shadow 0.3s;
         }
 
         .movie-card:hover {
@@ -231,7 +229,10 @@
             content: "";
             position: absolute;
             inset: 45% 0 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+            background: linear-gradient(
+                transparent,
+                rgba(0, 0, 0, 0.55)
+            );
             pointer-events: none;
         }
 
@@ -275,7 +276,11 @@
         /* TARJETA DE ANIMACIÓN */
         .animated-card {
             border: 2px solid #d6b35d;
-            background: linear-gradient(145deg, #201b10, #15161c 70%);
+            background: linear-gradient(
+                145deg,
+                #201b10,
+                #15161c 70%
+            );
         }
 
         .animated-card .card-info h3 {
@@ -306,7 +311,7 @@
             color: #e4bf68;
         }
 
-        /* RESPONSIVE */
+        /* TABLET */
         @media screen and (max-width: 900px) {
             .movies-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -318,6 +323,7 @@
             }
         }
 
+        /* CELULAR */
         @media screen and (max-width: 600px) {
             .header-inner {
                 flex-direction: column;
@@ -373,22 +379,36 @@
     <!-- ENCABEZADO -->
     <header id="header">
         <div class="header-inner">
+
             <a href="proyect.html" id="logo">Historia del Cine</a>
 
             <nav id="nav">
                 <ul>
-                    <li><a href="proyect.html" class="active">Inicio</a></li>
-                    <li><a href="#decadas">Décadas</a></li>
-                    <li><a href="animadas.html">Animadas</a></li>
+                    <!-- BOTÓN REGISTROS EN LUGAR DE INICIO -->
+                    <li>
+                        <a href="fm.html" class="active">Registros</a>
+                    </li>
+
+                    <li>
+                        <a href="#decadas">Décadas</a>
+                    </li>
+
+                    <li>
+                        <a href="animadas.html">Animadas</a>
+                    </li>
                 </ul>
             </nav>
+
         </div>
     </header>
 
     <!-- PORTADA -->
     <section class="hero">
         <div class="hero-content">
-            <p class="eyebrow">Un viaje por la historia del séptimo arte</p>
+
+            <p class="eyebrow">
+                Un viaje por la historia del séptimo arte
+            </p>
 
             <h1>HISTORIA <span>DEL CINE</span></h1>
 
@@ -397,7 +417,10 @@
                 clásicos y la evolución del cine desde los años 40 hasta la actualidad.
             </p>
 
-            <a href="#decadas" class="hero-button">EXPLORAR PELÍCULAS</a>
+            <a href="#decadas" class="hero-button">
+                EXPLORAR PELÍCULAS
+            </a>
+
         </div>
     </section>
 
@@ -407,6 +430,7 @@
         <div class="section-heading">
             <h2>Explora por décadas</h2>
             <div class="gold-line"></div>
+
             <p>
                 Cada época tiene historias inolvidables. Elige una década y descubre
                 sus películas más representativas.
@@ -419,11 +443,19 @@
             <article class="movie-card">
                 <a href="40s.html">
                     <div class="card-image">
-                        <img src="images/cine40.jpg" alt="Películas clásicas de los años 40">
+                        <img
+                            src="images/cine40.jpg"
+                            alt="Películas clásicas de los años 40"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 40</h3>
-                        <p>La época dorada de Hollywood y los grandes clásicos en blanco y negro.</p>
+                        <p>
+                            La época dorada de Hollywood y los grandes clásicos
+                            en blanco y negro.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -433,11 +465,19 @@
             <article class="movie-card">
                 <a href="threecolumn.html">
                     <div class="card-image">
-                        <img src="images/cine50.jpg" alt="Películas clásicas de los años 50">
+                        <img
+                            src="images/cine50.jpg"
+                            alt="Películas clásicas de los años 50"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 50</h3>
-                        <p>Grandes dramas, estrellas legendarias y películas inolvidables.</p>
+                        <p>
+                            Grandes dramas, estrellas legendarias y películas
+                            inolvidables.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -447,11 +487,19 @@
             <article class="movie-card">
                 <a href="60s.html">
                     <div class="card-image">
-                        <img src="images/cine60.jpg" alt="Películas de los años 60">
+                        <img
+                            src="images/cine60.jpg"
+                            alt="Películas de los años 60"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 60</h3>
-                        <p>Nuevos estilos, directores innovadores y cambios en el cine mundial.</p>
+                        <p>
+                            Nuevos estilos, directores innovadores y cambios
+                            en el cine mundial.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -461,11 +509,19 @@
             <article class="movie-card">
                 <a href="70s.html">
                     <div class="card-image">
-                        <img src="images/cine70.jpg" alt="Películas de los años 70">
+                        <img
+                            src="images/cine70.jpg"
+                            alt="Películas de los años 70"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 70</h3>
-                        <p>Historias arriesgadas y películas que transformaron Hollywood.</p>
+                        <p>
+                            Historias arriesgadas y películas que transformaron
+                            Hollywood.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -475,11 +531,19 @@
             <article class="movie-card">
                 <a href="80s.html">
                     <div class="card-image">
-                        <img src="images/cine80.jpg" alt="Películas de los años 80">
+                        <img
+                            src="images/cine80.jpg"
+                            alt="Películas de los años 80"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 80</h3>
-                        <p>Aventuras, ciencia ficción y éxitos que se convirtieron en clásicos.</p>
+                        <p>
+                            Aventuras, ciencia ficción y éxitos que se
+                            convirtieron en clásicos.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -489,11 +553,19 @@
             <article class="movie-card">
                 <a href="90s.html">
                     <div class="card-image">
-                        <img src="images/cine90.jpg" alt="Películas de los años 90">
+                        <img
+                            src="images/cine90.jpg"
+                            alt="Películas de los años 90"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 90</h3>
-                        <p>Grandes estrenos, nuevas tecnologías y cine para toda una generación.</p>
+                        <p>
+                            Grandes estrenos, nuevas tecnologías y cine para
+                            toda una generación.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -503,11 +575,19 @@
             <article class="movie-card">
                 <a href="2000s.html">
                     <div class="card-image">
-                        <img src="images/cine2000.jpg" alt="Películas de los años 2000">
+                        <img
+                            src="images/cine2000.jpg"
+                            alt="Películas de los años 2000"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 2000</h3>
-                        <p>Franquicias famosas, fantasía épica y el crecimiento del cine digital.</p>
+                        <p>
+                            Franquicias famosas, fantasía épica y el crecimiento
+                            del cine digital.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -517,11 +597,19 @@
             <article class="movie-card">
                 <a href="2010s.html">
                     <div class="card-image">
-                        <img src="images/cine2010.jpg" alt="Películas de los años 2010">
+                        <img
+                            src="images/cine2010.jpg"
+                            alt="Películas de los años 2010"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 2010</h3>
-                        <p>Superhéroes, animación avanzada y películas reconocidas mundialmente.</p>
+                        <p>
+                            Superhéroes, animación avanzada y películas
+                            reconocidas mundialmente.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -531,11 +619,19 @@
             <article class="movie-card">
                 <a href="2020s.html">
                     <div class="card-image">
-                        <img src="images/cine2020.jpg" alt="Películas de los años 2020">
+                        <img
+                            src="images/cine2020.jpg"
+                            alt="Películas de los años 2020"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Años 2020</h3>
-                        <p>Las tendencias actuales y las nuevas propuestas del cine moderno.</p>
+                        <p>
+                            Las tendencias actuales y las nuevas propuestas
+                            del cine moderno.
+                        </p>
                         <span class="card-link">Ver películas</span>
                     </div>
                 </a>
@@ -545,11 +641,19 @@
             <article class="movie-card animated-card">
                 <a href="animadas.html">
                     <div class="card-image">
-                        <img src="images/a.jpg" alt="Sección de películas animadas">
+                        <img
+                            src="images/a.jpg"
+                            alt="Sección de películas animadas"
+                            loading="lazy"
+                        >
                     </div>
+
                     <div class="card-info">
                         <h3>Películas animadas</h3>
-                        <p>Desde clásicos de animación hasta grandes historias como Shrek y El príncipe de Egipto.</p>
+                        <p>
+                            Desde clásicos de animación hasta grandes historias
+                            como Shrek y El príncipe de Egipto.
+                        </p>
                         <span class="card-link">Ver animadas</span>
                     </div>
                 </a>
@@ -566,6 +670,3 @@
 
 </body>
 </html>
-
-
-
