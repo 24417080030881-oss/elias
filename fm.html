@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario FM - Registro de películas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101010;
+            color: #ffffff;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .contenedor {
+            max-width: 650px;
+            margin: auto;
+            background: #1c1c1c;
+            padding: 25px;
+            border: 1px solid #72572f;
+            border-radius: 12px;
+        }
+
+        h1 {
+            color: #f0c66b;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 11px;
+            border-radius: 5px;
+            border: 1px solid #777;
+            background: #292929;
+            color: white;
+            font-size: 15px;
+        }
+
+        input[type="file"] {
+            background: #292929;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background: #c9a04f;
+            color: #101010;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #f0c66b;
+        }
+
+        .limpiar {
+            background: #444;
+            color: white;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+    <h1>Registro de películas</h1>
+
+    <form id="fm"
+          name="fm"
+          action="guardar_pelicula.php"
+          method="POST"
+          enctype="multipart/form-data">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"
+               maxlength="100" required>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos"
+               maxlength="100" required>
+
+        <label for="numero">Número de registro:</label>
+        <input type="number" id="numero" name="numero"
+               min="1" required>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo"
+               maxlength="150" required>
+
+        <label for="director">Director:</label>
+        <select id="director" name="director" required>
+            <option value="">Selecciona un director</option>
+            <option value="Steven Spielberg">Steven Spielberg</option>
+            <option value="Christopher Nolan">Christopher Nolan</option>
+            <option value="Tim Burton">Tim Burton</option>
+            <option value="James Cameron">James Cameron</option>
+            <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <label for="img">Imagen o póster de la película:</label>
+        <input type="file" id="img" name="img"
+               accept="image/jpeg,image/png,image/webp" required>
+
+        <label for="anio">Año de la película:</label>
+        <select id="anio" name="anio" required>
+            <option value="">Selecciona el año</option>
+            <option value="1940">1940</option>
+            <option value="1950">1950</option>
+            <option value="1960">1960</option>
+            <option value="1970">1970</option>
+            <option value="1980">1980</option>
+            <option value="1990">1990</option>
+            <option value="2000">2000</option>
+            <option value="2010">2010</option>
+            <option value="2020">2020</option>
+        </select>
+
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="">Selecciona un género</option>
+            <option value="Acción">Acción</option>
+            <option value="Animación">Animación</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Ciencia ficción">Ciencia ficción</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Romance">Romance</option>
+            <option value="Terror">Terror</option>
+        </select>
+
+        <button type="submit">Guardar película</button>
+        <button type="reset" class="limpiar">Limpiar formulario</button>
+
+    </form>
+</div>
+
+</body>
+</html>
